@@ -139,7 +139,7 @@ public class AzureClustersClient: Clients.AzureClustersProtocol {
   @available(*, deprecated)
   public func getAzureClient(
     request: GetAzureClientRequest, options: GoogleCloudGax.RequestOptions
-  ) async throws -> GoogleCloudGkemulticloudV1.AzureClient {
+  ) async throws -> GoogleCloudGKEMultiCloudV1.AzureClient {
     try await self.inner.getAzureClient(request: request, options: options)
   }
 
@@ -152,7 +152,7 @@ public class AzureClustersClient: Clients.AzureClustersProtocol {
   @available(*, deprecated)
   public func listAzureClients(
     request: ListAzureClientsRequest, options: GoogleCloudGax.RequestOptions
-  ) async throws -> GoogleCloudGkemulticloudV1.ListAzureClientsResponse {
+  ) async throws -> GoogleCloudGKEMultiCloudV1.ListAzureClientsResponse {
     try await self.inner.listAzureClients(request: request, options: options)
   }
 
@@ -167,7 +167,7 @@ public class AzureClustersClient: Clients.AzureClustersProtocol {
     byItem: ListAzureClientsRequest, options: GoogleCloudGax.RequestOptions
   ) throws -> any AsyncSequence<AzureClient, Swift.Error> {
     let listRpc = {
-      (token: Swift.String) async throws -> GoogleCloudGkemulticloudV1.ListAzureClientsResponse in
+      (token: Swift.String) async throws -> GoogleCloudGKEMultiCloudV1.ListAzureClientsResponse in
       var request = byItem
       request.pageToken = token
       return try await self.listAzureClients(request: request, options: options)
@@ -413,7 +413,7 @@ public class AzureClustersClient: Clients.AzureClustersProtocol {
   @available(*, deprecated)
   public func getAzureCluster(
     request: GetAzureClusterRequest, options: GoogleCloudGax.RequestOptions
-  ) async throws -> GoogleCloudGkemulticloudV1.AzureCluster {
+  ) async throws -> GoogleCloudGKEMultiCloudV1.AzureCluster {
     try await self.inner.getAzureCluster(request: request, options: options)
   }
 
@@ -426,7 +426,7 @@ public class AzureClustersClient: Clients.AzureClustersProtocol {
   @available(*, deprecated)
   public func listAzureClusters(
     request: ListAzureClustersRequest, options: GoogleCloudGax.RequestOptions
-  ) async throws -> GoogleCloudGkemulticloudV1.ListAzureClustersResponse {
+  ) async throws -> GoogleCloudGKEMultiCloudV1.ListAzureClustersResponse {
     try await self.inner.listAzureClusters(request: request, options: options)
   }
 
@@ -441,7 +441,7 @@ public class AzureClustersClient: Clients.AzureClustersProtocol {
     byItem: ListAzureClustersRequest, options: GoogleCloudGax.RequestOptions
   ) throws -> any AsyncSequence<AzureCluster, Swift.Error> {
     let listRpc = {
-      (token: Swift.String) async throws -> GoogleCloudGkemulticloudV1.ListAzureClustersResponse in
+      (token: Swift.String) async throws -> GoogleCloudGKEMultiCloudV1.ListAzureClustersResponse in
       var request = byItem
       request.pageToken = token
       return try await self.listAzureClusters(request: request, options: options)
@@ -536,7 +536,7 @@ public class AzureClustersClient: Clients.AzureClustersProtocol {
   @available(*, deprecated)
   public func generateAzureClusterAgentToken(
     request: GenerateAzureClusterAgentTokenRequest, options: GoogleCloudGax.RequestOptions
-  ) async throws -> GoogleCloudGkemulticloudV1.GenerateAzureClusterAgentTokenResponse {
+  ) async throws -> GoogleCloudGKEMultiCloudV1.GenerateAzureClusterAgentTokenResponse {
     try await self.inner.generateAzureClusterAgentToken(request: request, options: options)
   }
 
@@ -549,7 +549,7 @@ public class AzureClustersClient: Clients.AzureClustersProtocol {
   @available(*, deprecated)
   public func generateAzureAccessToken(
     request: GenerateAzureAccessTokenRequest, options: GoogleCloudGax.RequestOptions
-  ) async throws -> GoogleCloudGkemulticloudV1.GenerateAzureAccessTokenResponse {
+  ) async throws -> GoogleCloudGKEMultiCloudV1.GenerateAzureAccessTokenResponse {
     try await self.inner.generateAzureAccessToken(request: request, options: options)
   }
 
@@ -716,7 +716,7 @@ public class AzureClustersClient: Clients.AzureClustersProtocol {
   @available(*, deprecated)
   public func getAzureNodePool(
     request: GetAzureNodePoolRequest, options: GoogleCloudGax.RequestOptions
-  ) async throws -> GoogleCloudGkemulticloudV1.AzureNodePool {
+  ) async throws -> GoogleCloudGKEMultiCloudV1.AzureNodePool {
     try await self.inner.getAzureNodePool(request: request, options: options)
   }
 
@@ -731,7 +731,7 @@ public class AzureClustersClient: Clients.AzureClustersProtocol {
   @available(*, deprecated)
   public func listAzureNodePools(
     request: ListAzureNodePoolsRequest, options: GoogleCloudGax.RequestOptions
-  ) async throws -> GoogleCloudGkemulticloudV1.ListAzureNodePoolsResponse {
+  ) async throws -> GoogleCloudGKEMultiCloudV1.ListAzureNodePoolsResponse {
     try await self.inner.listAzureNodePools(request: request, options: options)
   }
 
@@ -748,7 +748,7 @@ public class AzureClustersClient: Clients.AzureClustersProtocol {
     byItem: ListAzureNodePoolsRequest, options: GoogleCloudGax.RequestOptions
   ) throws -> any AsyncSequence<AzureNodePool, Swift.Error> {
     let listRpc = {
-      (token: Swift.String) async throws -> GoogleCloudGkemulticloudV1.ListAzureNodePoolsResponse in
+      (token: Swift.String) async throws -> GoogleCloudGKEMultiCloudV1.ListAzureNodePoolsResponse in
       var request = byItem
       request.pageToken = token
       return try await self.listAzureNodePools(request: request, options: options)
@@ -839,7 +839,7 @@ public class AzureClustersClient: Clients.AzureClustersProtocol {
   @available(*, deprecated)
   public func getAzureOpenIdConfig(
     request: GetAzureOpenIdConfigRequest, options: GoogleCloudGax.RequestOptions
-  ) async throws -> GoogleCloudGkemulticloudV1.AzureOpenIdConfig {
+  ) async throws -> GoogleCloudGKEMultiCloudV1.AzureOpenIdConfig {
     try await self.inner.getAzureOpenIdConfig(request: request, options: options)
   }
 
@@ -850,7 +850,7 @@ public class AzureClustersClient: Clients.AzureClustersProtocol {
   @available(*, deprecated)
   public func getAzureJsonWebKeys(
     request: GetAzureJsonWebKeysRequest, options: GoogleCloudGax.RequestOptions
-  ) async throws -> GoogleCloudGkemulticloudV1.AzureJsonWebKeys {
+  ) async throws -> GoogleCloudGKEMultiCloudV1.AzureJsonWebKeys {
     try await self.inner.getAzureJsonWebKeys(request: request, options: options)
   }
 
@@ -861,7 +861,7 @@ public class AzureClustersClient: Clients.AzureClustersProtocol {
   @available(*, deprecated)
   public func getAzureServerConfig(
     request: GetAzureServerConfigRequest, options: GoogleCloudGax.RequestOptions
-  ) async throws -> GoogleCloudGkemulticloudV1.AzureServerConfig {
+  ) async throws -> GoogleCloudGKEMultiCloudV1.AzureServerConfig {
     try await self.inner.getAzureServerConfig(request: request, options: options)
   }
 
@@ -956,18 +956,18 @@ extension Clients {
     /// See `AzureClustersClient.getAzureClient`.
     @available(*, deprecated)
     func getAzureClient(request: GetAzureClientRequest) async throws
-      -> GoogleCloudGkemulticloudV1.AzureClient
+      -> GoogleCloudGKEMultiCloudV1.AzureClient
 
     /// See `AzureClustersClient.getAzureClient`.
     @available(*, deprecated)
     func getAzureClient(
       name: Swift.String,
-    ) async throws -> GoogleCloudGkemulticloudV1.AzureClient
+    ) async throws -> GoogleCloudGKEMultiCloudV1.AzureClient
 
     /// See `AzureClustersClient.listAzureClients`.
     @available(*, deprecated)
     func listAzureClients(request: ListAzureClientsRequest) async throws
-      -> GoogleCloudGkemulticloudV1.ListAzureClientsResponse
+      -> GoogleCloudGKEMultiCloudV1.ListAzureClientsResponse
 
     /// See `AzureClustersClient.listAzureClients`.
     @available(*, deprecated)
@@ -1035,18 +1035,18 @@ extension Clients {
     /// See `AzureClustersClient.getAzureCluster`.
     @available(*, deprecated)
     func getAzureCluster(request: GetAzureClusterRequest) async throws
-      -> GoogleCloudGkemulticloudV1.AzureCluster
+      -> GoogleCloudGKEMultiCloudV1.AzureCluster
 
     /// See `AzureClustersClient.getAzureCluster`.
     @available(*, deprecated)
     func getAzureCluster(
       name: Swift.String,
-    ) async throws -> GoogleCloudGkemulticloudV1.AzureCluster
+    ) async throws -> GoogleCloudGKEMultiCloudV1.AzureCluster
 
     /// See `AzureClustersClient.listAzureClusters`.
     @available(*, deprecated)
     func listAzureClusters(request: ListAzureClustersRequest) async throws
-      -> GoogleCloudGkemulticloudV1.ListAzureClustersResponse
+      -> GoogleCloudGKEMultiCloudV1.ListAzureClustersResponse
 
     /// See `AzureClustersClient.listAzureClusters`.
     @available(*, deprecated)
@@ -1079,12 +1079,12 @@ extension Clients {
     /// See `AzureClustersClient.generateAzureClusterAgentToken`.
     @available(*, deprecated)
     func generateAzureClusterAgentToken(request: GenerateAzureClusterAgentTokenRequest) async throws
-      -> GoogleCloudGkemulticloudV1.GenerateAzureClusterAgentTokenResponse
+      -> GoogleCloudGKEMultiCloudV1.GenerateAzureClusterAgentTokenResponse
 
     /// See `AzureClustersClient.generateAzureAccessToken`.
     @available(*, deprecated)
     func generateAzureAccessToken(request: GenerateAzureAccessTokenRequest) async throws
-      -> GoogleCloudGkemulticloudV1.GenerateAzureAccessTokenResponse
+      -> GoogleCloudGKEMultiCloudV1.GenerateAzureAccessTokenResponse
 
     /// See `AzureClustersClient.createAzureNodePool`.
     @available(*, deprecated)
@@ -1124,18 +1124,18 @@ extension Clients {
     /// See `AzureClustersClient.getAzureNodePool`.
     @available(*, deprecated)
     func getAzureNodePool(request: GetAzureNodePoolRequest) async throws
-      -> GoogleCloudGkemulticloudV1.AzureNodePool
+      -> GoogleCloudGKEMultiCloudV1.AzureNodePool
 
     /// See `AzureClustersClient.getAzureNodePool`.
     @available(*, deprecated)
     func getAzureNodePool(
       name: Swift.String,
-    ) async throws -> GoogleCloudGkemulticloudV1.AzureNodePool
+    ) async throws -> GoogleCloudGKEMultiCloudV1.AzureNodePool
 
     /// See `AzureClustersClient.listAzureNodePools`.
     @available(*, deprecated)
     func listAzureNodePools(request: ListAzureNodePoolsRequest) async throws
-      -> GoogleCloudGkemulticloudV1.ListAzureNodePoolsResponse
+      -> GoogleCloudGKEMultiCloudV1.ListAzureNodePoolsResponse
 
     /// See `AzureClustersClient.listAzureNodePools`.
     @available(*, deprecated)
@@ -1168,35 +1168,35 @@ extension Clients {
     /// See `AzureClustersClient.getAzureOpenIdConfig`.
     @available(*, deprecated)
     func getAzureOpenIdConfig(request: GetAzureOpenIdConfigRequest) async throws
-      -> GoogleCloudGkemulticloudV1.AzureOpenIdConfig
+      -> GoogleCloudGKEMultiCloudV1.AzureOpenIdConfig
 
     /// See `AzureClustersClient.getAzureOpenIdConfig`.
     @available(*, deprecated)
     func getAzureOpenIdConfig(
       azureCluster: Swift.String,
-    ) async throws -> GoogleCloudGkemulticloudV1.AzureOpenIdConfig
+    ) async throws -> GoogleCloudGKEMultiCloudV1.AzureOpenIdConfig
 
     /// See `AzureClustersClient.getAzureJsonWebKeys`.
     @available(*, deprecated)
     func getAzureJsonWebKeys(request: GetAzureJsonWebKeysRequest) async throws
-      -> GoogleCloudGkemulticloudV1.AzureJsonWebKeys
+      -> GoogleCloudGKEMultiCloudV1.AzureJsonWebKeys
 
     /// See `AzureClustersClient.getAzureJsonWebKeys`.
     @available(*, deprecated)
     func getAzureJsonWebKeys(
       azureCluster: Swift.String,
-    ) async throws -> GoogleCloudGkemulticloudV1.AzureJsonWebKeys
+    ) async throws -> GoogleCloudGKEMultiCloudV1.AzureJsonWebKeys
 
     /// See `AzureClustersClient.getAzureServerConfig`.
     @available(*, deprecated)
     func getAzureServerConfig(request: GetAzureServerConfigRequest) async throws
-      -> GoogleCloudGkemulticloudV1.AzureServerConfig
+      -> GoogleCloudGKEMultiCloudV1.AzureServerConfig
 
     /// See `AzureClustersClient.getAzureServerConfig`.
     @available(*, deprecated)
     func getAzureServerConfig(
       name: Swift.String,
-    ) async throws -> GoogleCloudGkemulticloudV1.AzureServerConfig
+    ) async throws -> GoogleCloudGKEMultiCloudV1.AzureServerConfig
 
     /// See `AzureClustersClient.listOperations`.
     func listOperations(request: GoogleLongrunning.ListOperationsRequest) async throws
@@ -1245,13 +1245,13 @@ extension Clients {
     @available(*, deprecated)
     func getAzureClient(
       request: GetAzureClientRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleCloudGkemulticloudV1.AzureClient
+    ) async throws -> GoogleCloudGKEMultiCloudV1.AzureClient
 
     /// See `AzureClustersClient.listAzureClients`.
     @available(*, deprecated)
     func listAzureClients(
       request: ListAzureClientsRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleCloudGkemulticloudV1.ListAzureClientsResponse
+    ) async throws -> GoogleCloudGKEMultiCloudV1.ListAzureClientsResponse
 
     /// See `AzureClustersClient.listAzureClients`.
     @available(*, deprecated)
@@ -1299,13 +1299,13 @@ extension Clients {
     @available(*, deprecated)
     func getAzureCluster(
       request: GetAzureClusterRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleCloudGkemulticloudV1.AzureCluster
+    ) async throws -> GoogleCloudGKEMultiCloudV1.AzureCluster
 
     /// See `AzureClustersClient.listAzureClusters`.
     @available(*, deprecated)
     func listAzureClusters(
       request: ListAzureClustersRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleCloudGkemulticloudV1.ListAzureClustersResponse
+    ) async throws -> GoogleCloudGKEMultiCloudV1.ListAzureClustersResponse
 
     /// See `AzureClustersClient.listAzureClusters`.
     @available(*, deprecated)
@@ -1329,13 +1329,13 @@ extension Clients {
     @available(*, deprecated)
     func generateAzureClusterAgentToken(
       request: GenerateAzureClusterAgentTokenRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleCloudGkemulticloudV1.GenerateAzureClusterAgentTokenResponse
+    ) async throws -> GoogleCloudGKEMultiCloudV1.GenerateAzureClusterAgentTokenResponse
 
     /// See `AzureClustersClient.generateAzureAccessToken`.
     @available(*, deprecated)
     func generateAzureAccessToken(
       request: GenerateAzureAccessTokenRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleCloudGkemulticloudV1.GenerateAzureAccessTokenResponse
+    ) async throws -> GoogleCloudGKEMultiCloudV1.GenerateAzureAccessTokenResponse
 
     /// See `AzureClustersClient.createAzureNodePool`.
     @available(*, deprecated)
@@ -1365,13 +1365,13 @@ extension Clients {
     @available(*, deprecated)
     func getAzureNodePool(
       request: GetAzureNodePoolRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleCloudGkemulticloudV1.AzureNodePool
+    ) async throws -> GoogleCloudGKEMultiCloudV1.AzureNodePool
 
     /// See `AzureClustersClient.listAzureNodePools`.
     @available(*, deprecated)
     func listAzureNodePools(
       request: ListAzureNodePoolsRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleCloudGkemulticloudV1.ListAzureNodePoolsResponse
+    ) async throws -> GoogleCloudGKEMultiCloudV1.ListAzureNodePoolsResponse
 
     /// See `AzureClustersClient.listAzureNodePools`.
     @available(*, deprecated)
@@ -1395,19 +1395,19 @@ extension Clients {
     @available(*, deprecated)
     func getAzureOpenIdConfig(
       request: GetAzureOpenIdConfigRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleCloudGkemulticloudV1.AzureOpenIdConfig
+    ) async throws -> GoogleCloudGKEMultiCloudV1.AzureOpenIdConfig
 
     /// See `AzureClustersClient.getAzureJsonWebKeys`.
     @available(*, deprecated)
     func getAzureJsonWebKeys(
       request: GetAzureJsonWebKeysRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleCloudGkemulticloudV1.AzureJsonWebKeys
+    ) async throws -> GoogleCloudGKEMultiCloudV1.AzureJsonWebKeys
 
     /// See `AzureClustersClient.getAzureServerConfig`.
     @available(*, deprecated)
     func getAzureServerConfig(
       request: GetAzureServerConfigRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleCloudGkemulticloudV1.AzureServerConfig
+    ) async throws -> GoogleCloudGKEMultiCloudV1.AzureServerConfig
 
     /// See `AzureClustersClient.listOperations`.
     func listOperations(
@@ -1475,20 +1475,20 @@ extension Clients.AzureClustersProtocol {
   }
 
   public func getAzureClient(request: GetAzureClientRequest) async throws
-    -> GoogleCloudGkemulticloudV1.AzureClient
+    -> GoogleCloudGKEMultiCloudV1.AzureClient
   {
     try await self.getAzureClient(request: request, options: .init())
   }
 
   public func getAzureClient(
     request: GetAzureClientRequest, options: GoogleCloudGax.RequestOptions
-  ) async throws -> GoogleCloudGkemulticloudV1.AzureClient {
+  ) async throws -> GoogleCloudGKEMultiCloudV1.AzureClient {
     throw GoogleCloudGax.RequestError.unimplemented
   }
 
   public func getAzureClient(
     name: Swift.String,
-  ) async throws -> GoogleCloudGkemulticloudV1.AzureClient {
+  ) async throws -> GoogleCloudGKEMultiCloudV1.AzureClient {
     let request = GetAzureClientRequest().with {
       $0.name = name
     }
@@ -1496,14 +1496,14 @@ extension Clients.AzureClustersProtocol {
   }
 
   public func listAzureClients(request: ListAzureClientsRequest) async throws
-    -> GoogleCloudGkemulticloudV1.ListAzureClientsResponse
+    -> GoogleCloudGKEMultiCloudV1.ListAzureClientsResponse
   {
     try await self.listAzureClients(request: request, options: .init())
   }
 
   public func listAzureClients(
     request: ListAzureClientsRequest, options: GoogleCloudGax.RequestOptions
-  ) async throws -> GoogleCloudGkemulticloudV1.ListAzureClientsResponse {
+  ) async throws -> GoogleCloudGKEMultiCloudV1.ListAzureClientsResponse {
     throw GoogleCloudGax.RequestError.unimplemented
   }
 
@@ -1517,7 +1517,7 @@ extension Clients.AzureClustersProtocol {
     byItem: ListAzureClientsRequest, options: GoogleCloudGax.RequestOptions
   ) throws -> any AsyncSequence<AzureClient, Swift.Error> {
     let listRpc = {
-      (token: Swift.String) async throws -> GoogleCloudGkemulticloudV1.ListAzureClientsResponse in
+      (token: Swift.String) async throws -> GoogleCloudGKEMultiCloudV1.ListAzureClientsResponse in
       throw GoogleCloudGax.RequestError.unimplemented
     }
     return GoogleCloudGax.PaginatedResponseSequence(listRpc: listRpc)
@@ -1650,20 +1650,20 @@ extension Clients.AzureClustersProtocol {
   }
 
   public func getAzureCluster(request: GetAzureClusterRequest) async throws
-    -> GoogleCloudGkemulticloudV1.AzureCluster
+    -> GoogleCloudGKEMultiCloudV1.AzureCluster
   {
     try await self.getAzureCluster(request: request, options: .init())
   }
 
   public func getAzureCluster(
     request: GetAzureClusterRequest, options: GoogleCloudGax.RequestOptions
-  ) async throws -> GoogleCloudGkemulticloudV1.AzureCluster {
+  ) async throws -> GoogleCloudGKEMultiCloudV1.AzureCluster {
     throw GoogleCloudGax.RequestError.unimplemented
   }
 
   public func getAzureCluster(
     name: Swift.String,
-  ) async throws -> GoogleCloudGkemulticloudV1.AzureCluster {
+  ) async throws -> GoogleCloudGKEMultiCloudV1.AzureCluster {
     let request = GetAzureClusterRequest().with {
       $0.name = name
     }
@@ -1671,14 +1671,14 @@ extension Clients.AzureClustersProtocol {
   }
 
   public func listAzureClusters(request: ListAzureClustersRequest) async throws
-    -> GoogleCloudGkemulticloudV1.ListAzureClustersResponse
+    -> GoogleCloudGKEMultiCloudV1.ListAzureClustersResponse
   {
     try await self.listAzureClusters(request: request, options: .init())
   }
 
   public func listAzureClusters(
     request: ListAzureClustersRequest, options: GoogleCloudGax.RequestOptions
-  ) async throws -> GoogleCloudGkemulticloudV1.ListAzureClustersResponse {
+  ) async throws -> GoogleCloudGKEMultiCloudV1.ListAzureClustersResponse {
     throw GoogleCloudGax.RequestError.unimplemented
   }
 
@@ -1692,7 +1692,7 @@ extension Clients.AzureClustersProtocol {
     byItem: ListAzureClustersRequest, options: GoogleCloudGax.RequestOptions
   ) throws -> any AsyncSequence<AzureCluster, Swift.Error> {
     let listRpc = {
-      (token: Swift.String) async throws -> GoogleCloudGkemulticloudV1.ListAzureClustersResponse in
+      (token: Swift.String) async throws -> GoogleCloudGKEMultiCloudV1.ListAzureClustersResponse in
       throw GoogleCloudGax.RequestError.unimplemented
     }
     return GoogleCloudGax.PaginatedResponseSequence(listRpc: listRpc)
@@ -1745,26 +1745,26 @@ extension Clients.AzureClustersProtocol {
   }
 
   public func generateAzureClusterAgentToken(request: GenerateAzureClusterAgentTokenRequest)
-    async throws -> GoogleCloudGkemulticloudV1.GenerateAzureClusterAgentTokenResponse
+    async throws -> GoogleCloudGKEMultiCloudV1.GenerateAzureClusterAgentTokenResponse
   {
     try await self.generateAzureClusterAgentToken(request: request, options: .init())
   }
 
   public func generateAzureClusterAgentToken(
     request: GenerateAzureClusterAgentTokenRequest, options: GoogleCloudGax.RequestOptions
-  ) async throws -> GoogleCloudGkemulticloudV1.GenerateAzureClusterAgentTokenResponse {
+  ) async throws -> GoogleCloudGKEMultiCloudV1.GenerateAzureClusterAgentTokenResponse {
     throw GoogleCloudGax.RequestError.unimplemented
   }
 
   public func generateAzureAccessToken(request: GenerateAzureAccessTokenRequest) async throws
-    -> GoogleCloudGkemulticloudV1.GenerateAzureAccessTokenResponse
+    -> GoogleCloudGKEMultiCloudV1.GenerateAzureAccessTokenResponse
   {
     try await self.generateAzureAccessToken(request: request, options: .init())
   }
 
   public func generateAzureAccessToken(
     request: GenerateAzureAccessTokenRequest, options: GoogleCloudGax.RequestOptions
-  ) async throws -> GoogleCloudGkemulticloudV1.GenerateAzureAccessTokenResponse {
+  ) async throws -> GoogleCloudGKEMultiCloudV1.GenerateAzureAccessTokenResponse {
     throw GoogleCloudGax.RequestError.unimplemented
   }
 
@@ -1849,20 +1849,20 @@ extension Clients.AzureClustersProtocol {
   }
 
   public func getAzureNodePool(request: GetAzureNodePoolRequest) async throws
-    -> GoogleCloudGkemulticloudV1.AzureNodePool
+    -> GoogleCloudGKEMultiCloudV1.AzureNodePool
   {
     try await self.getAzureNodePool(request: request, options: .init())
   }
 
   public func getAzureNodePool(
     request: GetAzureNodePoolRequest, options: GoogleCloudGax.RequestOptions
-  ) async throws -> GoogleCloudGkemulticloudV1.AzureNodePool {
+  ) async throws -> GoogleCloudGKEMultiCloudV1.AzureNodePool {
     throw GoogleCloudGax.RequestError.unimplemented
   }
 
   public func getAzureNodePool(
     name: Swift.String,
-  ) async throws -> GoogleCloudGkemulticloudV1.AzureNodePool {
+  ) async throws -> GoogleCloudGKEMultiCloudV1.AzureNodePool {
     let request = GetAzureNodePoolRequest().with {
       $0.name = name
     }
@@ -1870,14 +1870,14 @@ extension Clients.AzureClustersProtocol {
   }
 
   public func listAzureNodePools(request: ListAzureNodePoolsRequest) async throws
-    -> GoogleCloudGkemulticloudV1.ListAzureNodePoolsResponse
+    -> GoogleCloudGKEMultiCloudV1.ListAzureNodePoolsResponse
   {
     try await self.listAzureNodePools(request: request, options: .init())
   }
 
   public func listAzureNodePools(
     request: ListAzureNodePoolsRequest, options: GoogleCloudGax.RequestOptions
-  ) async throws -> GoogleCloudGkemulticloudV1.ListAzureNodePoolsResponse {
+  ) async throws -> GoogleCloudGKEMultiCloudV1.ListAzureNodePoolsResponse {
     throw GoogleCloudGax.RequestError.unimplemented
   }
 
@@ -1891,7 +1891,7 @@ extension Clients.AzureClustersProtocol {
     byItem: ListAzureNodePoolsRequest, options: GoogleCloudGax.RequestOptions
   ) throws -> any AsyncSequence<AzureNodePool, Swift.Error> {
     let listRpc = {
-      (token: Swift.String) async throws -> GoogleCloudGkemulticloudV1.ListAzureNodePoolsResponse in
+      (token: Swift.String) async throws -> GoogleCloudGKEMultiCloudV1.ListAzureNodePoolsResponse in
       throw GoogleCloudGax.RequestError.unimplemented
     }
     return GoogleCloudGax.PaginatedResponseSequence(listRpc: listRpc)
@@ -1944,20 +1944,20 @@ extension Clients.AzureClustersProtocol {
   }
 
   public func getAzureOpenIdConfig(request: GetAzureOpenIdConfigRequest) async throws
-    -> GoogleCloudGkemulticloudV1.AzureOpenIdConfig
+    -> GoogleCloudGKEMultiCloudV1.AzureOpenIdConfig
   {
     try await self.getAzureOpenIdConfig(request: request, options: .init())
   }
 
   public func getAzureOpenIdConfig(
     request: GetAzureOpenIdConfigRequest, options: GoogleCloudGax.RequestOptions
-  ) async throws -> GoogleCloudGkemulticloudV1.AzureOpenIdConfig {
+  ) async throws -> GoogleCloudGKEMultiCloudV1.AzureOpenIdConfig {
     throw GoogleCloudGax.RequestError.unimplemented
   }
 
   public func getAzureOpenIdConfig(
     azureCluster: Swift.String,
-  ) async throws -> GoogleCloudGkemulticloudV1.AzureOpenIdConfig {
+  ) async throws -> GoogleCloudGKEMultiCloudV1.AzureOpenIdConfig {
     let request = GetAzureOpenIdConfigRequest().with {
       $0.azureCluster = azureCluster
     }
@@ -1965,20 +1965,20 @@ extension Clients.AzureClustersProtocol {
   }
 
   public func getAzureJsonWebKeys(request: GetAzureJsonWebKeysRequest) async throws
-    -> GoogleCloudGkemulticloudV1.AzureJsonWebKeys
+    -> GoogleCloudGKEMultiCloudV1.AzureJsonWebKeys
   {
     try await self.getAzureJsonWebKeys(request: request, options: .init())
   }
 
   public func getAzureJsonWebKeys(
     request: GetAzureJsonWebKeysRequest, options: GoogleCloudGax.RequestOptions
-  ) async throws -> GoogleCloudGkemulticloudV1.AzureJsonWebKeys {
+  ) async throws -> GoogleCloudGKEMultiCloudV1.AzureJsonWebKeys {
     throw GoogleCloudGax.RequestError.unimplemented
   }
 
   public func getAzureJsonWebKeys(
     azureCluster: Swift.String,
-  ) async throws -> GoogleCloudGkemulticloudV1.AzureJsonWebKeys {
+  ) async throws -> GoogleCloudGKEMultiCloudV1.AzureJsonWebKeys {
     let request = GetAzureJsonWebKeysRequest().with {
       $0.azureCluster = azureCluster
     }
@@ -1986,20 +1986,20 @@ extension Clients.AzureClustersProtocol {
   }
 
   public func getAzureServerConfig(request: GetAzureServerConfigRequest) async throws
-    -> GoogleCloudGkemulticloudV1.AzureServerConfig
+    -> GoogleCloudGKEMultiCloudV1.AzureServerConfig
   {
     try await self.getAzureServerConfig(request: request, options: .init())
   }
 
   public func getAzureServerConfig(
     request: GetAzureServerConfigRequest, options: GoogleCloudGax.RequestOptions
-  ) async throws -> GoogleCloudGkemulticloudV1.AzureServerConfig {
+  ) async throws -> GoogleCloudGKEMultiCloudV1.AzureServerConfig {
     throw GoogleCloudGax.RequestError.unimplemented
   }
 
   public func getAzureServerConfig(
     name: Swift.String,
-  ) async throws -> GoogleCloudGkemulticloudV1.AzureServerConfig {
+  ) async throws -> GoogleCloudGKEMultiCloudV1.AzureServerConfig {
     let request = GetAzureServerConfigRequest().with {
       $0.name = name
     }

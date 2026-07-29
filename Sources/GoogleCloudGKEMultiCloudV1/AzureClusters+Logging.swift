@@ -22,32 +22,40 @@ import GoogleCloudWkt
 import GoogleLongrunning
 import GoogleRpc
 import GoogleCloudGax
+import struct Logging.Logger
 
 extension Clients {
-  final class AzureClustersRetry: AzureClustersStub {
+  final class AzureClustersLogging: AzureClustersStub {
     let inner: any AzureClustersStub
-    let options: GoogleCloudGax.ClientOptions
+    let logger: Logger
 
-    public init(_ inner: any AzureClustersStub, options: GoogleCloudGax.ClientOptions) {
+    public init(_ inner: any AzureClustersStub, logger: Logger) {
+      var logger = logger
+      logger[metadataKey: "gcp.artifact.id"] = "google-cloud-gkemulticloud-v1"
+      logger[metadataKey: "gcp.client.service"] = "gkemulticloud"
+      logger[metadataKey: "gcp.experimental.swift.client"] = "AzureClusters"
       self.inner = inner
-      self.options = options
+      self.logger = logger
     }
 
     func _intercept<Input, Output>(
       request: Input,
       options: GoogleCloudGax.RequestOptions,
-      idempotent: Swift.Bool,
+      name: Swift.String,
       action: (Input, GoogleCloudGax.RequestOptions) async throws -> Output,
     ) async throws -> Output {
-      let loop = GoogleCloudGax._RetryLoop(
-        options: options, withDefault: self.options, idempotent: idempotent,
-      )
-      let attempt = { (attemptTimeout: Swift.Duration?) async throws -> Output in
-        var attemptOptions = options
-        attemptOptions.attemptTimeout = attemptTimeout
-        return try await action(request, attemptOptions)
+      var logger = logger
+      logger[metadataKey: "gcp.experimental.swift.request.id"] = "\(UUID())"
+      logger[metadataKey: "gcp.experimental.swift.method"] = .string(name)
+      logger.debug("enter  : \(request) \(options)")
+      do {
+        let output = try await action(request, options)
+        logger.debug("success: \(request) \(options) \(output)")
+        return output
+      } catch let error {
+        logger.debug("error  : \(request) \(options) \(error)")
+        throw error
       }
-      return try await loop.run(attempt: attempt)
     }
 
     public func createAzureClient(
@@ -56,7 +64,7 @@ extension Clients {
       try await self._intercept(
         request: request,
         options: options,
-        idempotent: false,
+        name: "createAzureClient",
         action: {
           (r: CreateAzureClientRequest, o: GoogleCloudGax.RequestOptions) async throws
             -> GoogleLongrunning.Operation
@@ -67,14 +75,14 @@ extension Clients {
 
     public func getAzureClient(
       request: GetAzureClientRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleCloudGkemulticloudV1.AzureClient {
+    ) async throws -> GoogleCloudGKEMultiCloudV1.AzureClient {
       try await self._intercept(
         request: request,
         options: options,
-        idempotent: true,
+        name: "getAzureClient",
         action: {
           (r: GetAzureClientRequest, o: GoogleCloudGax.RequestOptions) async throws
-            -> GoogleCloudGkemulticloudV1.AzureClient
+            -> GoogleCloudGKEMultiCloudV1.AzureClient
           in
           return try await self.inner.getAzureClient(request: r, options: o)
         })
@@ -82,14 +90,14 @@ extension Clients {
 
     public func listAzureClients(
       request: ListAzureClientsRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleCloudGkemulticloudV1.ListAzureClientsResponse {
+    ) async throws -> GoogleCloudGKEMultiCloudV1.ListAzureClientsResponse {
       try await self._intercept(
         request: request,
         options: options,
-        idempotent: true,
+        name: "listAzureClients",
         action: {
           (r: ListAzureClientsRequest, o: GoogleCloudGax.RequestOptions) async throws
-            -> GoogleCloudGkemulticloudV1.ListAzureClientsResponse
+            -> GoogleCloudGKEMultiCloudV1.ListAzureClientsResponse
           in
           return try await self.inner.listAzureClients(request: r, options: o)
         })
@@ -101,7 +109,7 @@ extension Clients {
       try await self._intercept(
         request: request,
         options: options,
-        idempotent: false,
+        name: "deleteAzureClient",
         action: {
           (r: DeleteAzureClientRequest, o: GoogleCloudGax.RequestOptions) async throws
             -> GoogleLongrunning.Operation
@@ -116,7 +124,7 @@ extension Clients {
       try await self._intercept(
         request: request,
         options: options,
-        idempotent: false,
+        name: "createAzureCluster",
         action: {
           (r: CreateAzureClusterRequest, o: GoogleCloudGax.RequestOptions) async throws
             -> GoogleLongrunning.Operation
@@ -131,7 +139,7 @@ extension Clients {
       try await self._intercept(
         request: request,
         options: options,
-        idempotent: false,
+        name: "updateAzureCluster",
         action: {
           (r: UpdateAzureClusterRequest, o: GoogleCloudGax.RequestOptions) async throws
             -> GoogleLongrunning.Operation
@@ -142,14 +150,14 @@ extension Clients {
 
     public func getAzureCluster(
       request: GetAzureClusterRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleCloudGkemulticloudV1.AzureCluster {
+    ) async throws -> GoogleCloudGKEMultiCloudV1.AzureCluster {
       try await self._intercept(
         request: request,
         options: options,
-        idempotent: true,
+        name: "getAzureCluster",
         action: {
           (r: GetAzureClusterRequest, o: GoogleCloudGax.RequestOptions) async throws
-            -> GoogleCloudGkemulticloudV1.AzureCluster
+            -> GoogleCloudGKEMultiCloudV1.AzureCluster
           in
           return try await self.inner.getAzureCluster(request: r, options: o)
         })
@@ -157,14 +165,14 @@ extension Clients {
 
     public func listAzureClusters(
       request: ListAzureClustersRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleCloudGkemulticloudV1.ListAzureClustersResponse {
+    ) async throws -> GoogleCloudGKEMultiCloudV1.ListAzureClustersResponse {
       try await self._intercept(
         request: request,
         options: options,
-        idempotent: true,
+        name: "listAzureClusters",
         action: {
           (r: ListAzureClustersRequest, o: GoogleCloudGax.RequestOptions) async throws
-            -> GoogleCloudGkemulticloudV1.ListAzureClustersResponse
+            -> GoogleCloudGKEMultiCloudV1.ListAzureClustersResponse
           in
           return try await self.inner.listAzureClusters(request: r, options: o)
         })
@@ -176,7 +184,7 @@ extension Clients {
       try await self._intercept(
         request: request,
         options: options,
-        idempotent: false,
+        name: "deleteAzureCluster",
         action: {
           (r: DeleteAzureClusterRequest, o: GoogleCloudGax.RequestOptions) async throws
             -> GoogleLongrunning.Operation
@@ -187,14 +195,14 @@ extension Clients {
 
     public func generateAzureClusterAgentToken(
       request: GenerateAzureClusterAgentTokenRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleCloudGkemulticloudV1.GenerateAzureClusterAgentTokenResponse {
+    ) async throws -> GoogleCloudGKEMultiCloudV1.GenerateAzureClusterAgentTokenResponse {
       try await self._intercept(
         request: request,
         options: options,
-        idempotent: false,
+        name: "generateAzureClusterAgentToken",
         action: {
           (r: GenerateAzureClusterAgentTokenRequest, o: GoogleCloudGax.RequestOptions) async throws
-            -> GoogleCloudGkemulticloudV1.GenerateAzureClusterAgentTokenResponse
+            -> GoogleCloudGKEMultiCloudV1.GenerateAzureClusterAgentTokenResponse
           in
           return try await self.inner.generateAzureClusterAgentToken(request: r, options: o)
         })
@@ -202,14 +210,14 @@ extension Clients {
 
     public func generateAzureAccessToken(
       request: GenerateAzureAccessTokenRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleCloudGkemulticloudV1.GenerateAzureAccessTokenResponse {
+    ) async throws -> GoogleCloudGKEMultiCloudV1.GenerateAzureAccessTokenResponse {
       try await self._intercept(
         request: request,
         options: options,
-        idempotent: true,
+        name: "generateAzureAccessToken",
         action: {
           (r: GenerateAzureAccessTokenRequest, o: GoogleCloudGax.RequestOptions) async throws
-            -> GoogleCloudGkemulticloudV1.GenerateAzureAccessTokenResponse
+            -> GoogleCloudGKEMultiCloudV1.GenerateAzureAccessTokenResponse
           in
           return try await self.inner.generateAzureAccessToken(request: r, options: o)
         })
@@ -221,7 +229,7 @@ extension Clients {
       try await self._intercept(
         request: request,
         options: options,
-        idempotent: false,
+        name: "createAzureNodePool",
         action: {
           (r: CreateAzureNodePoolRequest, o: GoogleCloudGax.RequestOptions) async throws
             -> GoogleLongrunning.Operation
@@ -236,7 +244,7 @@ extension Clients {
       try await self._intercept(
         request: request,
         options: options,
-        idempotent: false,
+        name: "updateAzureNodePool",
         action: {
           (r: UpdateAzureNodePoolRequest, o: GoogleCloudGax.RequestOptions) async throws
             -> GoogleLongrunning.Operation
@@ -247,14 +255,14 @@ extension Clients {
 
     public func getAzureNodePool(
       request: GetAzureNodePoolRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleCloudGkemulticloudV1.AzureNodePool {
+    ) async throws -> GoogleCloudGKEMultiCloudV1.AzureNodePool {
       try await self._intercept(
         request: request,
         options: options,
-        idempotent: true,
+        name: "getAzureNodePool",
         action: {
           (r: GetAzureNodePoolRequest, o: GoogleCloudGax.RequestOptions) async throws
-            -> GoogleCloudGkemulticloudV1.AzureNodePool
+            -> GoogleCloudGKEMultiCloudV1.AzureNodePool
           in
           return try await self.inner.getAzureNodePool(request: r, options: o)
         })
@@ -262,14 +270,14 @@ extension Clients {
 
     public func listAzureNodePools(
       request: ListAzureNodePoolsRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleCloudGkemulticloudV1.ListAzureNodePoolsResponse {
+    ) async throws -> GoogleCloudGKEMultiCloudV1.ListAzureNodePoolsResponse {
       try await self._intercept(
         request: request,
         options: options,
-        idempotent: true,
+        name: "listAzureNodePools",
         action: {
           (r: ListAzureNodePoolsRequest, o: GoogleCloudGax.RequestOptions) async throws
-            -> GoogleCloudGkemulticloudV1.ListAzureNodePoolsResponse
+            -> GoogleCloudGKEMultiCloudV1.ListAzureNodePoolsResponse
           in
           return try await self.inner.listAzureNodePools(request: r, options: o)
         })
@@ -281,7 +289,7 @@ extension Clients {
       try await self._intercept(
         request: request,
         options: options,
-        idempotent: false,
+        name: "deleteAzureNodePool",
         action: {
           (r: DeleteAzureNodePoolRequest, o: GoogleCloudGax.RequestOptions) async throws
             -> GoogleLongrunning.Operation
@@ -292,14 +300,14 @@ extension Clients {
 
     public func getAzureOpenIdConfig(
       request: GetAzureOpenIdConfigRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleCloudGkemulticloudV1.AzureOpenIdConfig {
+    ) async throws -> GoogleCloudGKEMultiCloudV1.AzureOpenIdConfig {
       try await self._intercept(
         request: request,
         options: options,
-        idempotent: true,
+        name: "getAzureOpenIdConfig",
         action: {
           (r: GetAzureOpenIdConfigRequest, o: GoogleCloudGax.RequestOptions) async throws
-            -> GoogleCloudGkemulticloudV1.AzureOpenIdConfig
+            -> GoogleCloudGKEMultiCloudV1.AzureOpenIdConfig
           in
           return try await self.inner.getAzureOpenIdConfig(request: r, options: o)
         })
@@ -307,14 +315,14 @@ extension Clients {
 
     public func getAzureJsonWebKeys(
       request: GetAzureJsonWebKeysRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleCloudGkemulticloudV1.AzureJsonWebKeys {
+    ) async throws -> GoogleCloudGKEMultiCloudV1.AzureJsonWebKeys {
       try await self._intercept(
         request: request,
         options: options,
-        idempotent: true,
+        name: "getAzureJsonWebKeys",
         action: {
           (r: GetAzureJsonWebKeysRequest, o: GoogleCloudGax.RequestOptions) async throws
-            -> GoogleCloudGkemulticloudV1.AzureJsonWebKeys
+            -> GoogleCloudGKEMultiCloudV1.AzureJsonWebKeys
           in
           return try await self.inner.getAzureJsonWebKeys(request: r, options: o)
         })
@@ -322,14 +330,14 @@ extension Clients {
 
     public func getAzureServerConfig(
       request: GetAzureServerConfigRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleCloudGkemulticloudV1.AzureServerConfig {
+    ) async throws -> GoogleCloudGKEMultiCloudV1.AzureServerConfig {
       try await self._intercept(
         request: request,
         options: options,
-        idempotent: true,
+        name: "getAzureServerConfig",
         action: {
           (r: GetAzureServerConfigRequest, o: GoogleCloudGax.RequestOptions) async throws
-            -> GoogleCloudGkemulticloudV1.AzureServerConfig
+            -> GoogleCloudGKEMultiCloudV1.AzureServerConfig
           in
           return try await self.inner.getAzureServerConfig(request: r, options: o)
         })
@@ -341,7 +349,7 @@ extension Clients {
       try await self._intercept(
         request: request,
         options: options,
-        idempotent: true,
+        name: "listOperations",
         action: {
           (r: GoogleLongrunning.ListOperationsRequest, o: GoogleCloudGax.RequestOptions)
             async throws -> GoogleLongrunning.ListOperationsResponse
@@ -356,7 +364,7 @@ extension Clients {
       try await self._intercept(
         request: request,
         options: options,
-        idempotent: true,
+        name: "getOperation",
         action: {
           (r: GoogleLongrunning.GetOperationRequest, o: GoogleCloudGax.RequestOptions) async throws
             -> GoogleLongrunning.Operation
@@ -371,7 +379,7 @@ extension Clients {
       try await self._intercept(
         request: request,
         options: options,
-        idempotent: false,
+        name: "deleteOperation",
         action: {
           (r: GoogleLongrunning.DeleteOperationRequest, o: GoogleCloudGax.RequestOptions)
             async throws -> Void in
@@ -385,7 +393,7 @@ extension Clients {
       try await self._intercept(
         request: request,
         options: options,
-        idempotent: false,
+        name: "cancelOperation",
         action: {
           (r: GoogleLongrunning.CancelOperationRequest, o: GoogleCloudGax.RequestOptions)
             async throws -> Void in

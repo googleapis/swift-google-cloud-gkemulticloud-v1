@@ -24,70 +24,82 @@ import GoogleRpc
 import GoogleCloudGax
 
 extension Clients {
-  protocol AwsClustersStub {
-    func createAwsCluster(
-      request: CreateAwsClusterRequest, options: GoogleCloudGax.RequestOptions
+  protocol AzureClustersStub {
+    func createAzureClient(
+      request: CreateAzureClientRequest, options: GoogleCloudGax.RequestOptions
     ) async throws -> GoogleLongrunning.Operation
 
-    func updateAwsCluster(
-      request: UpdateAwsClusterRequest, options: GoogleCloudGax.RequestOptions
+    func getAzureClient(
+      request: GetAzureClientRequest, options: GoogleCloudGax.RequestOptions
+    ) async throws -> GoogleCloudGKEMultiCloudV1.AzureClient
+
+    func listAzureClients(
+      request: ListAzureClientsRequest, options: GoogleCloudGax.RequestOptions
+    ) async throws -> GoogleCloudGKEMultiCloudV1.ListAzureClientsResponse
+
+    func deleteAzureClient(
+      request: DeleteAzureClientRequest, options: GoogleCloudGax.RequestOptions
     ) async throws -> GoogleLongrunning.Operation
 
-    func getAwsCluster(
-      request: GetAwsClusterRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleCloudGkemulticloudV1.AwsCluster
-
-    func listAwsClusters(
-      request: ListAwsClustersRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleCloudGkemulticloudV1.ListAwsClustersResponse
-
-    func deleteAwsCluster(
-      request: DeleteAwsClusterRequest, options: GoogleCloudGax.RequestOptions
+    func createAzureCluster(
+      request: CreateAzureClusterRequest, options: GoogleCloudGax.RequestOptions
     ) async throws -> GoogleLongrunning.Operation
 
-    func generateAwsClusterAgentToken(
-      request: GenerateAwsClusterAgentTokenRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleCloudGkemulticloudV1.GenerateAwsClusterAgentTokenResponse
-
-    func generateAwsAccessToken(
-      request: GenerateAwsAccessTokenRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleCloudGkemulticloudV1.GenerateAwsAccessTokenResponse
-
-    func createAwsNodePool(
-      request: CreateAwsNodePoolRequest, options: GoogleCloudGax.RequestOptions
+    func updateAzureCluster(
+      request: UpdateAzureClusterRequest, options: GoogleCloudGax.RequestOptions
     ) async throws -> GoogleLongrunning.Operation
 
-    func updateAwsNodePool(
-      request: UpdateAwsNodePoolRequest, options: GoogleCloudGax.RequestOptions
+    func getAzureCluster(
+      request: GetAzureClusterRequest, options: GoogleCloudGax.RequestOptions
+    ) async throws -> GoogleCloudGKEMultiCloudV1.AzureCluster
+
+    func listAzureClusters(
+      request: ListAzureClustersRequest, options: GoogleCloudGax.RequestOptions
+    ) async throws -> GoogleCloudGKEMultiCloudV1.ListAzureClustersResponse
+
+    func deleteAzureCluster(
+      request: DeleteAzureClusterRequest, options: GoogleCloudGax.RequestOptions
     ) async throws -> GoogleLongrunning.Operation
 
-    func rollbackAwsNodePoolUpdate(
-      request: RollbackAwsNodePoolUpdateRequest, options: GoogleCloudGax.RequestOptions
+    func generateAzureClusterAgentToken(
+      request: GenerateAzureClusterAgentTokenRequest, options: GoogleCloudGax.RequestOptions
+    ) async throws -> GoogleCloudGKEMultiCloudV1.GenerateAzureClusterAgentTokenResponse
+
+    func generateAzureAccessToken(
+      request: GenerateAzureAccessTokenRequest, options: GoogleCloudGax.RequestOptions
+    ) async throws -> GoogleCloudGKEMultiCloudV1.GenerateAzureAccessTokenResponse
+
+    func createAzureNodePool(
+      request: CreateAzureNodePoolRequest, options: GoogleCloudGax.RequestOptions
     ) async throws -> GoogleLongrunning.Operation
 
-    func getAwsNodePool(
-      request: GetAwsNodePoolRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleCloudGkemulticloudV1.AwsNodePool
-
-    func listAwsNodePools(
-      request: ListAwsNodePoolsRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleCloudGkemulticloudV1.ListAwsNodePoolsResponse
-
-    func deleteAwsNodePool(
-      request: DeleteAwsNodePoolRequest, options: GoogleCloudGax.RequestOptions
+    func updateAzureNodePool(
+      request: UpdateAzureNodePoolRequest, options: GoogleCloudGax.RequestOptions
     ) async throws -> GoogleLongrunning.Operation
 
-    func getAwsOpenIdConfig(
-      request: GetAwsOpenIdConfigRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleCloudGkemulticloudV1.AwsOpenIdConfig
+    func getAzureNodePool(
+      request: GetAzureNodePoolRequest, options: GoogleCloudGax.RequestOptions
+    ) async throws -> GoogleCloudGKEMultiCloudV1.AzureNodePool
 
-    func getAwsJsonWebKeys(
-      request: GetAwsJsonWebKeysRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleCloudGkemulticloudV1.AwsJsonWebKeys
+    func listAzureNodePools(
+      request: ListAzureNodePoolsRequest, options: GoogleCloudGax.RequestOptions
+    ) async throws -> GoogleCloudGKEMultiCloudV1.ListAzureNodePoolsResponse
 
-    func getAwsServerConfig(
-      request: GetAwsServerConfigRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleCloudGkemulticloudV1.AwsServerConfig
+    func deleteAzureNodePool(
+      request: DeleteAzureNodePoolRequest, options: GoogleCloudGax.RequestOptions
+    ) async throws -> GoogleLongrunning.Operation
+
+    func getAzureOpenIdConfig(
+      request: GetAzureOpenIdConfigRequest, options: GoogleCloudGax.RequestOptions
+    ) async throws -> GoogleCloudGKEMultiCloudV1.AzureOpenIdConfig
+
+    func getAzureJsonWebKeys(
+      request: GetAzureJsonWebKeysRequest, options: GoogleCloudGax.RequestOptions
+    ) async throws -> GoogleCloudGKEMultiCloudV1.AzureJsonWebKeys
+
+    func getAzureServerConfig(
+      request: GetAzureServerConfigRequest, options: GoogleCloudGax.RequestOptions
+    ) async throws -> GoogleCloudGKEMultiCloudV1.AzureServerConfig
 
     func listOperations(
       request: GoogleLongrunning.ListOperationsRequest, options: GoogleCloudGax.RequestOptions
@@ -106,7 +118,7 @@ extension Clients {
     ) async throws
   }
 
-  class AwsClustersTransport: AwsClustersStub {
+  class AzureClustersTransport: AzureClustersStub {
     let inner: GoogleCloudGax.HTTPClient
 
     public init(_ options: GoogleCloudGax.ClientOptions = .init()) throws {
@@ -114,25 +126,25 @@ extension Clients {
         from: options, withDefaultEndpoint: "https://gkemulticloud.googleapis.com")
     }
 
-    public func createAwsCluster(
-      request: CreateAwsClusterRequest, options: GoogleCloudGax.RequestOptions
+    public func createAzureClient(
+      request: CreateAzureClientRequest, options: GoogleCloudGax.RequestOptions
     ) async throws -> GoogleLongrunning.Operation {
       let path = try { () throws -> Swift.String in
         guard let pathVariable0 = request.parent as Swift.String?, !pathVariable0.isEmpty else {
           throw GoogleCloudGax.RequestError.binding("'request.parent' is not set or is empty")
         }
-        return "/v1/\(pathVariable0)/awsClusters"
+        return "/v1/\(pathVariable0)/azureClients"
       }()
       var query = [
         URLQueryItem(name: "$alt", value: "json;enum-encoding=int")
       ]
       let encoder = GoogleCloudGax.QueryParameterEncoder()
-      query.append(contentsOf: try encoder.encode(request.awsClusterId, prefix: "awsClusterId"))
+      query.append(contentsOf: try encoder.encode(request.azureClientId, prefix: "azureClientId"))
       query.append(contentsOf: try encoder.encode(request.validateOnly, prefix: "validateOnly"))
       var req = try await self.inner.Request(path: path, query: query)
       req.httpMethod = "POST"
       req.setValue(Clients.clientHeader, forHTTPHeaderField: "X-Goog-Api-Client")
-      if let body = request.awsCluster {
+      if let body = request.azureClient {
         req.setValue("application/json", forHTTPHeaderField: "Content-Type")
         req.httpBody = try JSONEncoder().encode(body)
       }
@@ -141,37 +153,9 @@ extension Clients {
         GoogleLongrunning.Operation.self, from: data)
     }
 
-    public func updateAwsCluster(
-      request: UpdateAwsClusterRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleLongrunning.Operation {
-      let path = try { () throws -> Swift.String in
-        guard let pathVariable0 = request.awsCluster.map({ $0.name }), !pathVariable0.isEmpty else {
-          throw GoogleCloudGax.RequestError.binding(
-            "'request.aws_cluster.name' is not set or is empty")
-        }
-        return "/v1/\(pathVariable0)"
-      }()
-      var query = [
-        URLQueryItem(name: "$alt", value: "json;enum-encoding=int")
-      ]
-      let encoder = GoogleCloudGax.QueryParameterEncoder()
-      query.append(contentsOf: try encoder.encode(request.validateOnly, prefix: "validateOnly"))
-      query.append(contentsOf: try encoder.encode(request.updateMask, prefix: "updateMask"))
-      var req = try await self.inner.Request(path: path, query: query)
-      req.httpMethod = "PATCH"
-      req.setValue(Clients.clientHeader, forHTTPHeaderField: "X-Goog-Api-Client")
-      if let body = request.awsCluster {
-        req.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        req.httpBody = try JSONEncoder().encode(body)
-      }
-      let (data, _) = try await self.inner.rpc(for: req).get()
-      return try GoogleCloudWkt._ProtoJSONDecoder().decode(
-        GoogleLongrunning.Operation.self, from: data)
-    }
-
-    public func getAwsCluster(
-      request: GetAwsClusterRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleCloudGkemulticloudV1.AwsCluster {
+    public func getAzureClient(
+      request: GetAzureClientRequest, options: GoogleCloudGax.RequestOptions
+    ) async throws -> GoogleCloudGKEMultiCloudV1.AzureClient {
       let path = try { () throws -> Swift.String in
         guard let pathVariable0 = request.name as Swift.String?, !pathVariable0.isEmpty else {
           throw GoogleCloudGax.RequestError.binding("'request.name' is not set or is empty")
@@ -186,17 +170,17 @@ extension Clients {
       req.setValue(Clients.clientHeader, forHTTPHeaderField: "X-Goog-Api-Client")
       let (data, _) = try await self.inner.rpc(for: req).get()
       return try GoogleCloudWkt._ProtoJSONDecoder().decode(
-        GoogleCloudGkemulticloudV1.AwsCluster.self, from: data)
+        GoogleCloudGKEMultiCloudV1.AzureClient.self, from: data)
     }
 
-    public func listAwsClusters(
-      request: ListAwsClustersRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleCloudGkemulticloudV1.ListAwsClustersResponse {
+    public func listAzureClients(
+      request: ListAzureClientsRequest, options: GoogleCloudGax.RequestOptions
+    ) async throws -> GoogleCloudGKEMultiCloudV1.ListAzureClientsResponse {
       let path = try { () throws -> Swift.String in
         guard let pathVariable0 = request.parent as Swift.String?, !pathVariable0.isEmpty else {
           throw GoogleCloudGax.RequestError.binding("'request.parent' is not set or is empty")
         }
-        return "/v1/\(pathVariable0)/awsClusters"
+        return "/v1/\(pathVariable0)/azureClients"
       }()
       var query = [
         URLQueryItem(name: "$alt", value: "json;enum-encoding=int")
@@ -209,11 +193,11 @@ extension Clients {
       req.setValue(Clients.clientHeader, forHTTPHeaderField: "X-Goog-Api-Client")
       let (data, _) = try await self.inner.rpc(for: req).get()
       return try GoogleCloudWkt._ProtoJSONDecoder().decode(
-        GoogleCloudGkemulticloudV1.ListAwsClustersResponse.self, from: data)
+        GoogleCloudGKEMultiCloudV1.ListAzureClientsResponse.self, from: data)
     }
 
-    public func deleteAwsCluster(
-      request: DeleteAwsClusterRequest, options: GoogleCloudGax.RequestOptions
+    public func deleteAzureClient(
+      request: DeleteAzureClientRequest, options: GoogleCloudGax.RequestOptions
     ) async throws -> GoogleLongrunning.Operation {
       let path = try { () throws -> Swift.String in
         guard let pathVariable0 = request.name as Swift.String?, !pathVariable0.isEmpty else {
@@ -225,10 +209,8 @@ extension Clients {
         URLQueryItem(name: "$alt", value: "json;enum-encoding=int")
       ]
       let encoder = GoogleCloudGax.QueryParameterEncoder()
-      query.append(contentsOf: try encoder.encode(request.validateOnly, prefix: "validateOnly"))
       query.append(contentsOf: try encoder.encode(request.allowMissing, prefix: "allowMissing"))
-      query.append(contentsOf: try encoder.encode(request.ignoreErrors, prefix: "ignoreErrors"))
-      query.append(contentsOf: try encoder.encode(request.etag, prefix: "etag"))
+      query.append(contentsOf: try encoder.encode(request.validateOnly, prefix: "validateOnly"))
       var req = try await self.inner.Request(path: path, query: query)
       req.httpMethod = "DELETE"
       req.setValue(Clients.clientHeader, forHTTPHeaderField: "X-Goog-Api-Client")
@@ -237,67 +219,25 @@ extension Clients {
         GoogleLongrunning.Operation.self, from: data)
     }
 
-    public func generateAwsClusterAgentToken(
-      request: GenerateAwsClusterAgentTokenRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleCloudGkemulticloudV1.GenerateAwsClusterAgentTokenResponse {
-      let path = try { () throws -> Swift.String in
-        guard let pathVariable0 = request.awsCluster as Swift.String?, !pathVariable0.isEmpty else {
-          throw GoogleCloudGax.RequestError.binding("'request.aws_cluster' is not set or is empty")
-        }
-        return "/v1/\(pathVariable0):generateAwsClusterAgentToken"
-      }()
-      let query = [
-        URLQueryItem(name: "$alt", value: "json;enum-encoding=int")
-      ]
-      var req = try await self.inner.Request(path: path, query: query)
-      req.httpMethod = "POST"
-      req.setValue(Clients.clientHeader, forHTTPHeaderField: "X-Goog-Api-Client")
-      req.setValue("application/json", forHTTPHeaderField: "Content-Type")
-      req.httpBody = try JSONEncoder().encode(request)
-      let (data, _) = try await self.inner.rpc(for: req).get()
-      return try GoogleCloudWkt._ProtoJSONDecoder().decode(
-        GoogleCloudGkemulticloudV1.GenerateAwsClusterAgentTokenResponse.self, from: data)
-    }
-
-    public func generateAwsAccessToken(
-      request: GenerateAwsAccessTokenRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleCloudGkemulticloudV1.GenerateAwsAccessTokenResponse {
-      let path = try { () throws -> Swift.String in
-        guard let pathVariable0 = request.awsCluster as Swift.String?, !pathVariable0.isEmpty else {
-          throw GoogleCloudGax.RequestError.binding("'request.aws_cluster' is not set or is empty")
-        }
-        return "/v1/\(pathVariable0):generateAwsAccessToken"
-      }()
-      let query = [
-        URLQueryItem(name: "$alt", value: "json;enum-encoding=int")
-      ]
-      var req = try await self.inner.Request(path: path, query: query)
-      req.httpMethod = "GET"
-      req.setValue(Clients.clientHeader, forHTTPHeaderField: "X-Goog-Api-Client")
-      let (data, _) = try await self.inner.rpc(for: req).get()
-      return try GoogleCloudWkt._ProtoJSONDecoder().decode(
-        GoogleCloudGkemulticloudV1.GenerateAwsAccessTokenResponse.self, from: data)
-    }
-
-    public func createAwsNodePool(
-      request: CreateAwsNodePoolRequest, options: GoogleCloudGax.RequestOptions
+    public func createAzureCluster(
+      request: CreateAzureClusterRequest, options: GoogleCloudGax.RequestOptions
     ) async throws -> GoogleLongrunning.Operation {
       let path = try { () throws -> Swift.String in
         guard let pathVariable0 = request.parent as Swift.String?, !pathVariable0.isEmpty else {
           throw GoogleCloudGax.RequestError.binding("'request.parent' is not set or is empty")
         }
-        return "/v1/\(pathVariable0)/awsNodePools"
+        return "/v1/\(pathVariable0)/azureClusters"
       }()
       var query = [
         URLQueryItem(name: "$alt", value: "json;enum-encoding=int")
       ]
       let encoder = GoogleCloudGax.QueryParameterEncoder()
-      query.append(contentsOf: try encoder.encode(request.awsNodePoolId, prefix: "awsNodePoolId"))
+      query.append(contentsOf: try encoder.encode(request.azureClusterId, prefix: "azureClusterId"))
       query.append(contentsOf: try encoder.encode(request.validateOnly, prefix: "validateOnly"))
       var req = try await self.inner.Request(path: path, query: query)
       req.httpMethod = "POST"
       req.setValue(Clients.clientHeader, forHTTPHeaderField: "X-Goog-Api-Client")
-      if let body = request.awsNodePool {
+      if let body = request.azureCluster {
         req.setValue("application/json", forHTTPHeaderField: "Content-Type")
         req.httpBody = try JSONEncoder().encode(body)
       }
@@ -306,14 +246,14 @@ extension Clients {
         GoogleLongrunning.Operation.self, from: data)
     }
 
-    public func updateAwsNodePool(
-      request: UpdateAwsNodePoolRequest, options: GoogleCloudGax.RequestOptions
+    public func updateAzureCluster(
+      request: UpdateAzureClusterRequest, options: GoogleCloudGax.RequestOptions
     ) async throws -> GoogleLongrunning.Operation {
       let path = try { () throws -> Swift.String in
-        guard let pathVariable0 = request.awsNodePool.map({ $0.name }), !pathVariable0.isEmpty
+        guard let pathVariable0 = request.azureCluster.map({ $0.name }), !pathVariable0.isEmpty
         else {
           throw GoogleCloudGax.RequestError.binding(
-            "'request.aws_node_pool.name' is not set or is empty")
+            "'request.azure_cluster.name' is not set or is empty")
         }
         return "/v1/\(pathVariable0)"
       }()
@@ -326,7 +266,7 @@ extension Clients {
       var req = try await self.inner.Request(path: path, query: query)
       req.httpMethod = "PATCH"
       req.setValue(Clients.clientHeader, forHTTPHeaderField: "X-Goog-Api-Client")
-      if let body = request.awsNodePool {
+      if let body = request.azureCluster {
         req.setValue("application/json", forHTTPHeaderField: "Content-Type")
         req.httpBody = try JSONEncoder().encode(body)
       }
@@ -335,31 +275,9 @@ extension Clients {
         GoogleLongrunning.Operation.self, from: data)
     }
 
-    public func rollbackAwsNodePoolUpdate(
-      request: RollbackAwsNodePoolUpdateRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleLongrunning.Operation {
-      let path = try { () throws -> Swift.String in
-        guard let pathVariable0 = request.name as Swift.String?, !pathVariable0.isEmpty else {
-          throw GoogleCloudGax.RequestError.binding("'request.name' is not set or is empty")
-        }
-        return "/v1/\(pathVariable0):rollback"
-      }()
-      let query = [
-        URLQueryItem(name: "$alt", value: "json;enum-encoding=int")
-      ]
-      var req = try await self.inner.Request(path: path, query: query)
-      req.httpMethod = "POST"
-      req.setValue(Clients.clientHeader, forHTTPHeaderField: "X-Goog-Api-Client")
-      req.setValue("application/json", forHTTPHeaderField: "Content-Type")
-      req.httpBody = try JSONEncoder().encode(request)
-      let (data, _) = try await self.inner.rpc(for: req).get()
-      return try GoogleCloudWkt._ProtoJSONDecoder().decode(
-        GoogleLongrunning.Operation.self, from: data)
-    }
-
-    public func getAwsNodePool(
-      request: GetAwsNodePoolRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleCloudGkemulticloudV1.AwsNodePool {
+    public func getAzureCluster(
+      request: GetAzureClusterRequest, options: GoogleCloudGax.RequestOptions
+    ) async throws -> GoogleCloudGKEMultiCloudV1.AzureCluster {
       let path = try { () throws -> Swift.String in
         guard let pathVariable0 = request.name as Swift.String?, !pathVariable0.isEmpty else {
           throw GoogleCloudGax.RequestError.binding("'request.name' is not set or is empty")
@@ -374,17 +292,17 @@ extension Clients {
       req.setValue(Clients.clientHeader, forHTTPHeaderField: "X-Goog-Api-Client")
       let (data, _) = try await self.inner.rpc(for: req).get()
       return try GoogleCloudWkt._ProtoJSONDecoder().decode(
-        GoogleCloudGkemulticloudV1.AwsNodePool.self, from: data)
+        GoogleCloudGKEMultiCloudV1.AzureCluster.self, from: data)
     }
 
-    public func listAwsNodePools(
-      request: ListAwsNodePoolsRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleCloudGkemulticloudV1.ListAwsNodePoolsResponse {
+    public func listAzureClusters(
+      request: ListAzureClustersRequest, options: GoogleCloudGax.RequestOptions
+    ) async throws -> GoogleCloudGKEMultiCloudV1.ListAzureClustersResponse {
       let path = try { () throws -> Swift.String in
         guard let pathVariable0 = request.parent as Swift.String?, !pathVariable0.isEmpty else {
           throw GoogleCloudGax.RequestError.binding("'request.parent' is not set or is empty")
         }
-        return "/v1/\(pathVariable0)/awsNodePools"
+        return "/v1/\(pathVariable0)/azureClusters"
       }()
       var query = [
         URLQueryItem(name: "$alt", value: "json;enum-encoding=int")
@@ -397,11 +315,182 @@ extension Clients {
       req.setValue(Clients.clientHeader, forHTTPHeaderField: "X-Goog-Api-Client")
       let (data, _) = try await self.inner.rpc(for: req).get()
       return try GoogleCloudWkt._ProtoJSONDecoder().decode(
-        GoogleCloudGkemulticloudV1.ListAwsNodePoolsResponse.self, from: data)
+        GoogleCloudGKEMultiCloudV1.ListAzureClustersResponse.self, from: data)
     }
 
-    public func deleteAwsNodePool(
-      request: DeleteAwsNodePoolRequest, options: GoogleCloudGax.RequestOptions
+    public func deleteAzureCluster(
+      request: DeleteAzureClusterRequest, options: GoogleCloudGax.RequestOptions
+    ) async throws -> GoogleLongrunning.Operation {
+      let path = try { () throws -> Swift.String in
+        guard let pathVariable0 = request.name as Swift.String?, !pathVariable0.isEmpty else {
+          throw GoogleCloudGax.RequestError.binding("'request.name' is not set or is empty")
+        }
+        return "/v1/\(pathVariable0)"
+      }()
+      var query = [
+        URLQueryItem(name: "$alt", value: "json;enum-encoding=int")
+      ]
+      let encoder = GoogleCloudGax.QueryParameterEncoder()
+      query.append(contentsOf: try encoder.encode(request.allowMissing, prefix: "allowMissing"))
+      query.append(contentsOf: try encoder.encode(request.validateOnly, prefix: "validateOnly"))
+      query.append(contentsOf: try encoder.encode(request.etag, prefix: "etag"))
+      query.append(contentsOf: try encoder.encode(request.ignoreErrors, prefix: "ignoreErrors"))
+      var req = try await self.inner.Request(path: path, query: query)
+      req.httpMethod = "DELETE"
+      req.setValue(Clients.clientHeader, forHTTPHeaderField: "X-Goog-Api-Client")
+      let (data, _) = try await self.inner.rpc(for: req).get()
+      return try GoogleCloudWkt._ProtoJSONDecoder().decode(
+        GoogleLongrunning.Operation.self, from: data)
+    }
+
+    public func generateAzureClusterAgentToken(
+      request: GenerateAzureClusterAgentTokenRequest, options: GoogleCloudGax.RequestOptions
+    ) async throws -> GoogleCloudGKEMultiCloudV1.GenerateAzureClusterAgentTokenResponse {
+      let path = try { () throws -> Swift.String in
+        guard let pathVariable0 = request.azureCluster as Swift.String?, !pathVariable0.isEmpty
+        else {
+          throw GoogleCloudGax.RequestError.binding(
+            "'request.azure_cluster' is not set or is empty")
+        }
+        return "/v1/\(pathVariable0):generateAzureClusterAgentToken"
+      }()
+      let query = [
+        URLQueryItem(name: "$alt", value: "json;enum-encoding=int")
+      ]
+      var req = try await self.inner.Request(path: path, query: query)
+      req.httpMethod = "POST"
+      req.setValue(Clients.clientHeader, forHTTPHeaderField: "X-Goog-Api-Client")
+      req.setValue("application/json", forHTTPHeaderField: "Content-Type")
+      req.httpBody = try JSONEncoder().encode(request)
+      let (data, _) = try await self.inner.rpc(for: req).get()
+      return try GoogleCloudWkt._ProtoJSONDecoder().decode(
+        GoogleCloudGKEMultiCloudV1.GenerateAzureClusterAgentTokenResponse.self, from: data)
+    }
+
+    public func generateAzureAccessToken(
+      request: GenerateAzureAccessTokenRequest, options: GoogleCloudGax.RequestOptions
+    ) async throws -> GoogleCloudGKEMultiCloudV1.GenerateAzureAccessTokenResponse {
+      let path = try { () throws -> Swift.String in
+        guard let pathVariable0 = request.azureCluster as Swift.String?, !pathVariable0.isEmpty
+        else {
+          throw GoogleCloudGax.RequestError.binding(
+            "'request.azure_cluster' is not set or is empty")
+        }
+        return "/v1/\(pathVariable0):generateAzureAccessToken"
+      }()
+      let query = [
+        URLQueryItem(name: "$alt", value: "json;enum-encoding=int")
+      ]
+      var req = try await self.inner.Request(path: path, query: query)
+      req.httpMethod = "GET"
+      req.setValue(Clients.clientHeader, forHTTPHeaderField: "X-Goog-Api-Client")
+      let (data, _) = try await self.inner.rpc(for: req).get()
+      return try GoogleCloudWkt._ProtoJSONDecoder().decode(
+        GoogleCloudGKEMultiCloudV1.GenerateAzureAccessTokenResponse.self, from: data)
+    }
+
+    public func createAzureNodePool(
+      request: CreateAzureNodePoolRequest, options: GoogleCloudGax.RequestOptions
+    ) async throws -> GoogleLongrunning.Operation {
+      let path = try { () throws -> Swift.String in
+        guard let pathVariable0 = request.parent as Swift.String?, !pathVariable0.isEmpty else {
+          throw GoogleCloudGax.RequestError.binding("'request.parent' is not set or is empty")
+        }
+        return "/v1/\(pathVariable0)/azureNodePools"
+      }()
+      var query = [
+        URLQueryItem(name: "$alt", value: "json;enum-encoding=int")
+      ]
+      let encoder = GoogleCloudGax.QueryParameterEncoder()
+      query.append(
+        contentsOf: try encoder.encode(request.azureNodePoolId, prefix: "azureNodePoolId"))
+      query.append(contentsOf: try encoder.encode(request.validateOnly, prefix: "validateOnly"))
+      var req = try await self.inner.Request(path: path, query: query)
+      req.httpMethod = "POST"
+      req.setValue(Clients.clientHeader, forHTTPHeaderField: "X-Goog-Api-Client")
+      if let body = request.azureNodePool {
+        req.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        req.httpBody = try JSONEncoder().encode(body)
+      }
+      let (data, _) = try await self.inner.rpc(for: req).get()
+      return try GoogleCloudWkt._ProtoJSONDecoder().decode(
+        GoogleLongrunning.Operation.self, from: data)
+    }
+
+    public func updateAzureNodePool(
+      request: UpdateAzureNodePoolRequest, options: GoogleCloudGax.RequestOptions
+    ) async throws -> GoogleLongrunning.Operation {
+      let path = try { () throws -> Swift.String in
+        guard let pathVariable0 = request.azureNodePool.map({ $0.name }), !pathVariable0.isEmpty
+        else {
+          throw GoogleCloudGax.RequestError.binding(
+            "'request.azure_node_pool.name' is not set or is empty")
+        }
+        return "/v1/\(pathVariable0)"
+      }()
+      var query = [
+        URLQueryItem(name: "$alt", value: "json;enum-encoding=int")
+      ]
+      let encoder = GoogleCloudGax.QueryParameterEncoder()
+      query.append(contentsOf: try encoder.encode(request.validateOnly, prefix: "validateOnly"))
+      query.append(contentsOf: try encoder.encode(request.updateMask, prefix: "updateMask"))
+      var req = try await self.inner.Request(path: path, query: query)
+      req.httpMethod = "PATCH"
+      req.setValue(Clients.clientHeader, forHTTPHeaderField: "X-Goog-Api-Client")
+      if let body = request.azureNodePool {
+        req.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        req.httpBody = try JSONEncoder().encode(body)
+      }
+      let (data, _) = try await self.inner.rpc(for: req).get()
+      return try GoogleCloudWkt._ProtoJSONDecoder().decode(
+        GoogleLongrunning.Operation.self, from: data)
+    }
+
+    public func getAzureNodePool(
+      request: GetAzureNodePoolRequest, options: GoogleCloudGax.RequestOptions
+    ) async throws -> GoogleCloudGKEMultiCloudV1.AzureNodePool {
+      let path = try { () throws -> Swift.String in
+        guard let pathVariable0 = request.name as Swift.String?, !pathVariable0.isEmpty else {
+          throw GoogleCloudGax.RequestError.binding("'request.name' is not set or is empty")
+        }
+        return "/v1/\(pathVariable0)"
+      }()
+      let query = [
+        URLQueryItem(name: "$alt", value: "json;enum-encoding=int")
+      ]
+      var req = try await self.inner.Request(path: path, query: query)
+      req.httpMethod = "GET"
+      req.setValue(Clients.clientHeader, forHTTPHeaderField: "X-Goog-Api-Client")
+      let (data, _) = try await self.inner.rpc(for: req).get()
+      return try GoogleCloudWkt._ProtoJSONDecoder().decode(
+        GoogleCloudGKEMultiCloudV1.AzureNodePool.self, from: data)
+    }
+
+    public func listAzureNodePools(
+      request: ListAzureNodePoolsRequest, options: GoogleCloudGax.RequestOptions
+    ) async throws -> GoogleCloudGKEMultiCloudV1.ListAzureNodePoolsResponse {
+      let path = try { () throws -> Swift.String in
+        guard let pathVariable0 = request.parent as Swift.String?, !pathVariable0.isEmpty else {
+          throw GoogleCloudGax.RequestError.binding("'request.parent' is not set or is empty")
+        }
+        return "/v1/\(pathVariable0)/azureNodePools"
+      }()
+      var query = [
+        URLQueryItem(name: "$alt", value: "json;enum-encoding=int")
+      ]
+      let encoder = GoogleCloudGax.QueryParameterEncoder()
+      query.append(contentsOf: try encoder.encode(request.pageSize, prefix: "pageSize"))
+      query.append(contentsOf: try encoder.encode(request.pageToken, prefix: "pageToken"))
+      var req = try await self.inner.Request(path: path, query: query)
+      req.httpMethod = "GET"
+      req.setValue(Clients.clientHeader, forHTTPHeaderField: "X-Goog-Api-Client")
+      let (data, _) = try await self.inner.rpc(for: req).get()
+      return try GoogleCloudWkt._ProtoJSONDecoder().decode(
+        GoogleCloudGKEMultiCloudV1.ListAzureNodePoolsResponse.self, from: data)
+    }
+
+    public func deleteAzureNodePool(
+      request: DeleteAzureNodePoolRequest, options: GoogleCloudGax.RequestOptions
     ) async throws -> GoogleLongrunning.Operation {
       let path = try { () throws -> Swift.String in
         guard let pathVariable0 = request.name as Swift.String?, !pathVariable0.isEmpty else {
@@ -415,8 +504,8 @@ extension Clients {
       let encoder = GoogleCloudGax.QueryParameterEncoder()
       query.append(contentsOf: try encoder.encode(request.validateOnly, prefix: "validateOnly"))
       query.append(contentsOf: try encoder.encode(request.allowMissing, prefix: "allowMissing"))
-      query.append(contentsOf: try encoder.encode(request.ignoreErrors, prefix: "ignoreErrors"))
       query.append(contentsOf: try encoder.encode(request.etag, prefix: "etag"))
+      query.append(contentsOf: try encoder.encode(request.ignoreErrors, prefix: "ignoreErrors"))
       var req = try await self.inner.Request(path: path, query: query)
       req.httpMethod = "DELETE"
       req.setValue(Clients.clientHeader, forHTTPHeaderField: "X-Goog-Api-Client")
@@ -425,12 +514,14 @@ extension Clients {
         GoogleLongrunning.Operation.self, from: data)
     }
 
-    public func getAwsOpenIdConfig(
-      request: GetAwsOpenIdConfigRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleCloudGkemulticloudV1.AwsOpenIdConfig {
+    public func getAzureOpenIdConfig(
+      request: GetAzureOpenIdConfigRequest, options: GoogleCloudGax.RequestOptions
+    ) async throws -> GoogleCloudGKEMultiCloudV1.AzureOpenIdConfig {
       let path = try { () throws -> Swift.String in
-        guard let pathVariable0 = request.awsCluster as Swift.String?, !pathVariable0.isEmpty else {
-          throw GoogleCloudGax.RequestError.binding("'request.aws_cluster' is not set or is empty")
+        guard let pathVariable0 = request.azureCluster as Swift.String?, !pathVariable0.isEmpty
+        else {
+          throw GoogleCloudGax.RequestError.binding(
+            "'request.azure_cluster' is not set or is empty")
         }
         return "/v1/\(pathVariable0)/.well-known/openid-configuration"
       }()
@@ -442,15 +533,17 @@ extension Clients {
       req.setValue(Clients.clientHeader, forHTTPHeaderField: "X-Goog-Api-Client")
       let (data, _) = try await self.inner.rpc(for: req).get()
       return try GoogleCloudWkt._ProtoJSONDecoder().decode(
-        GoogleCloudGkemulticloudV1.AwsOpenIdConfig.self, from: data)
+        GoogleCloudGKEMultiCloudV1.AzureOpenIdConfig.self, from: data)
     }
 
-    public func getAwsJsonWebKeys(
-      request: GetAwsJsonWebKeysRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleCloudGkemulticloudV1.AwsJsonWebKeys {
+    public func getAzureJsonWebKeys(
+      request: GetAzureJsonWebKeysRequest, options: GoogleCloudGax.RequestOptions
+    ) async throws -> GoogleCloudGKEMultiCloudV1.AzureJsonWebKeys {
       let path = try { () throws -> Swift.String in
-        guard let pathVariable0 = request.awsCluster as Swift.String?, !pathVariable0.isEmpty else {
-          throw GoogleCloudGax.RequestError.binding("'request.aws_cluster' is not set or is empty")
+        guard let pathVariable0 = request.azureCluster as Swift.String?, !pathVariable0.isEmpty
+        else {
+          throw GoogleCloudGax.RequestError.binding(
+            "'request.azure_cluster' is not set or is empty")
         }
         return "/v1/\(pathVariable0)/jwks"
       }()
@@ -462,12 +555,12 @@ extension Clients {
       req.setValue(Clients.clientHeader, forHTTPHeaderField: "X-Goog-Api-Client")
       let (data, _) = try await self.inner.rpc(for: req).get()
       return try GoogleCloudWkt._ProtoJSONDecoder().decode(
-        GoogleCloudGkemulticloudV1.AwsJsonWebKeys.self, from: data)
+        GoogleCloudGKEMultiCloudV1.AzureJsonWebKeys.self, from: data)
     }
 
-    public func getAwsServerConfig(
-      request: GetAwsServerConfigRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleCloudGkemulticloudV1.AwsServerConfig {
+    public func getAzureServerConfig(
+      request: GetAzureServerConfigRequest, options: GoogleCloudGax.RequestOptions
+    ) async throws -> GoogleCloudGKEMultiCloudV1.AzureServerConfig {
       let path = try { () throws -> Swift.String in
         guard let pathVariable0 = request.name as Swift.String?, !pathVariable0.isEmpty else {
           throw GoogleCloudGax.RequestError.binding("'request.name' is not set or is empty")
@@ -482,7 +575,7 @@ extension Clients {
       req.setValue(Clients.clientHeader, forHTTPHeaderField: "X-Goog-Api-Client")
       let (data, _) = try await self.inner.rpc(for: req).get()
       return try GoogleCloudWkt._ProtoJSONDecoder().decode(
-        GoogleCloudGkemulticloudV1.AwsServerConfig.self, from: data)
+        GoogleCloudGKEMultiCloudV1.AzureServerConfig.self, from: data)
     }
 
     public func listOperations(

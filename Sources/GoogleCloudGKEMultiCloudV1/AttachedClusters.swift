@@ -286,7 +286,7 @@ public class AttachedClustersClient: Clients.AttachedClustersProtocol {
   /// @Snippet(path: "AttachedClusters_GetAttachedCluster")
   public func getAttachedCluster(
     request: GetAttachedClusterRequest, options: GoogleCloudGax.RequestOptions
-  ) async throws -> GoogleCloudGkemulticloudV1.AttachedCluster {
+  ) async throws -> GoogleCloudGKEMultiCloudV1.AttachedCluster {
     try await self.inner.getAttachedCluster(request: request, options: options)
   }
 
@@ -298,7 +298,7 @@ public class AttachedClustersClient: Clients.AttachedClustersProtocol {
   /// @Snippet(path: "AttachedClusters_ListAttachedClusters")
   public func listAttachedClusters(
     request: ListAttachedClustersRequest, options: GoogleCloudGax.RequestOptions
-  ) async throws -> GoogleCloudGkemulticloudV1.ListAttachedClustersResponse {
+  ) async throws -> GoogleCloudGKEMultiCloudV1.ListAttachedClustersResponse {
     try await self.inner.listAttachedClusters(request: request, options: options)
   }
 
@@ -312,7 +312,7 @@ public class AttachedClustersClient: Clients.AttachedClustersProtocol {
     byItem: ListAttachedClustersRequest, options: GoogleCloudGax.RequestOptions
   ) throws -> any AsyncSequence<AttachedCluster, Swift.Error> {
     let listRpc = {
-      (token: Swift.String) async throws -> GoogleCloudGkemulticloudV1.ListAttachedClustersResponse
+      (token: Swift.String) async throws -> GoogleCloudGKEMultiCloudV1.ListAttachedClustersResponse
       in
       var request = byItem
       request.pageToken = token
@@ -398,7 +398,7 @@ public class AttachedClustersClient: Clients.AttachedClustersProtocol {
   /// @Snippet(path: "AttachedClusters_GetAttachedServerConfig")
   public func getAttachedServerConfig(
     request: GetAttachedServerConfigRequest, options: GoogleCloudGax.RequestOptions
-  ) async throws -> GoogleCloudGkemulticloudV1.AttachedServerConfig {
+  ) async throws -> GoogleCloudGKEMultiCloudV1.AttachedServerConfig {
     try await self.inner.getAttachedServerConfig(request: request, options: options)
   }
 
@@ -407,7 +407,7 @@ public class AttachedClustersClient: Clients.AttachedClustersProtocol {
   /// @Snippet(path: "AttachedClusters_GenerateAttachedClusterInstallManifest")
   public func generateAttachedClusterInstallManifest(
     request: GenerateAttachedClusterInstallManifestRequest, options: GoogleCloudGax.RequestOptions
-  ) async throws -> GoogleCloudGkemulticloudV1.GenerateAttachedClusterInstallManifestResponse {
+  ) async throws -> GoogleCloudGKEMultiCloudV1.GenerateAttachedClusterInstallManifestResponse {
     try await self.inner.generateAttachedClusterInstallManifest(request: request, options: options)
   }
 
@@ -416,7 +416,7 @@ public class AttachedClustersClient: Clients.AttachedClustersProtocol {
   /// @Snippet(path: "AttachedClusters_GenerateAttachedClusterAgentToken")
   public func generateAttachedClusterAgentToken(
     request: GenerateAttachedClusterAgentTokenRequest, options: GoogleCloudGax.RequestOptions
-  ) async throws -> GoogleCloudGkemulticloudV1.GenerateAttachedClusterAgentTokenResponse {
+  ) async throws -> GoogleCloudGKEMultiCloudV1.GenerateAttachedClusterAgentTokenResponse {
     try await self.inner.generateAttachedClusterAgentToken(request: request, options: options)
   }
 
@@ -534,16 +534,16 @@ extension Clients {
 
     /// See `AttachedClustersClient.getAttachedCluster`.
     func getAttachedCluster(request: GetAttachedClusterRequest) async throws
-      -> GoogleCloudGkemulticloudV1.AttachedCluster
+      -> GoogleCloudGKEMultiCloudV1.AttachedCluster
 
     /// See `AttachedClustersClient.getAttachedCluster`.
     func getAttachedCluster(
       name: Swift.String,
-    ) async throws -> GoogleCloudGkemulticloudV1.AttachedCluster
+    ) async throws -> GoogleCloudGKEMultiCloudV1.AttachedCluster
 
     /// See `AttachedClustersClient.listAttachedClusters`.
     func listAttachedClusters(request: ListAttachedClustersRequest) async throws
-      -> GoogleCloudGkemulticloudV1.ListAttachedClustersResponse
+      -> GoogleCloudGKEMultiCloudV1.ListAttachedClustersResponse
 
     /// See `AttachedClustersClient.listAttachedClusters`.
     func listAttachedClusters(
@@ -570,27 +570,27 @@ extension Clients {
 
     /// See `AttachedClustersClient.getAttachedServerConfig`.
     func getAttachedServerConfig(request: GetAttachedServerConfigRequest) async throws
-      -> GoogleCloudGkemulticloudV1.AttachedServerConfig
+      -> GoogleCloudGKEMultiCloudV1.AttachedServerConfig
 
     /// See `AttachedClustersClient.getAttachedServerConfig`.
     func getAttachedServerConfig(
       name: Swift.String,
-    ) async throws -> GoogleCloudGkemulticloudV1.AttachedServerConfig
+    ) async throws -> GoogleCloudGKEMultiCloudV1.AttachedServerConfig
 
     /// See `AttachedClustersClient.generateAttachedClusterInstallManifest`.
     func generateAttachedClusterInstallManifest(
       request: GenerateAttachedClusterInstallManifestRequest
-    ) async throws -> GoogleCloudGkemulticloudV1.GenerateAttachedClusterInstallManifestResponse
+    ) async throws -> GoogleCloudGKEMultiCloudV1.GenerateAttachedClusterInstallManifestResponse
 
     /// See `AttachedClustersClient.generateAttachedClusterInstallManifest`.
     func generateAttachedClusterInstallManifest(
       parent: Swift.String,
       attachedClusterId: Swift.String,
-    ) async throws -> GoogleCloudGkemulticloudV1.GenerateAttachedClusterInstallManifestResponse
+    ) async throws -> GoogleCloudGKEMultiCloudV1.GenerateAttachedClusterInstallManifestResponse
 
     /// See `AttachedClustersClient.generateAttachedClusterAgentToken`.
     func generateAttachedClusterAgentToken(request: GenerateAttachedClusterAgentTokenRequest)
-      async throws -> GoogleCloudGkemulticloudV1.GenerateAttachedClusterAgentTokenResponse
+      async throws -> GoogleCloudGKEMultiCloudV1.GenerateAttachedClusterAgentTokenResponse
 
     /// See `AttachedClustersClient.listOperations`.
     func listOperations(request: GoogleLongrunning.ListOperationsRequest) async throws
@@ -656,12 +656,12 @@ extension Clients {
     /// See `AttachedClustersClient.getAttachedCluster`.
     func getAttachedCluster(
       request: GetAttachedClusterRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleCloudGkemulticloudV1.AttachedCluster
+    ) async throws -> GoogleCloudGKEMultiCloudV1.AttachedCluster
 
     /// See `AttachedClustersClient.listAttachedClusters`.
     func listAttachedClusters(
       request: ListAttachedClustersRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleCloudGkemulticloudV1.ListAttachedClustersResponse
+    ) async throws -> GoogleCloudGKEMultiCloudV1.ListAttachedClustersResponse
 
     /// See `AttachedClustersClient.listAttachedClusters`.
     func listAttachedClusters(
@@ -681,17 +681,17 @@ extension Clients {
     /// See `AttachedClustersClient.getAttachedServerConfig`.
     func getAttachedServerConfig(
       request: GetAttachedServerConfigRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleCloudGkemulticloudV1.AttachedServerConfig
+    ) async throws -> GoogleCloudGKEMultiCloudV1.AttachedServerConfig
 
     /// See `AttachedClustersClient.generateAttachedClusterInstallManifest`.
     func generateAttachedClusterInstallManifest(
       request: GenerateAttachedClusterInstallManifestRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleCloudGkemulticloudV1.GenerateAttachedClusterInstallManifestResponse
+    ) async throws -> GoogleCloudGKEMultiCloudV1.GenerateAttachedClusterInstallManifestResponse
 
     /// See `AttachedClustersClient.generateAttachedClusterAgentToken`.
     func generateAttachedClusterAgentToken(
       request: GenerateAttachedClusterAgentTokenRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleCloudGkemulticloudV1.GenerateAttachedClusterAgentTokenResponse
+    ) async throws -> GoogleCloudGKEMultiCloudV1.GenerateAttachedClusterAgentTokenResponse
 
     /// See `AttachedClustersClient.listOperations`.
     func listOperations(
@@ -837,20 +837,20 @@ extension Clients.AttachedClustersProtocol {
   }
 
   public func getAttachedCluster(request: GetAttachedClusterRequest) async throws
-    -> GoogleCloudGkemulticloudV1.AttachedCluster
+    -> GoogleCloudGKEMultiCloudV1.AttachedCluster
   {
     try await self.getAttachedCluster(request: request, options: .init())
   }
 
   public func getAttachedCluster(
     request: GetAttachedClusterRequest, options: GoogleCloudGax.RequestOptions
-  ) async throws -> GoogleCloudGkemulticloudV1.AttachedCluster {
+  ) async throws -> GoogleCloudGKEMultiCloudV1.AttachedCluster {
     throw GoogleCloudGax.RequestError.unimplemented
   }
 
   public func getAttachedCluster(
     name: Swift.String,
-  ) async throws -> GoogleCloudGkemulticloudV1.AttachedCluster {
+  ) async throws -> GoogleCloudGKEMultiCloudV1.AttachedCluster {
     let request = GetAttachedClusterRequest().with {
       $0.name = name
     }
@@ -858,14 +858,14 @@ extension Clients.AttachedClustersProtocol {
   }
 
   public func listAttachedClusters(request: ListAttachedClustersRequest) async throws
-    -> GoogleCloudGkemulticloudV1.ListAttachedClustersResponse
+    -> GoogleCloudGKEMultiCloudV1.ListAttachedClustersResponse
   {
     try await self.listAttachedClusters(request: request, options: .init())
   }
 
   public func listAttachedClusters(
     request: ListAttachedClustersRequest, options: GoogleCloudGax.RequestOptions
-  ) async throws -> GoogleCloudGkemulticloudV1.ListAttachedClustersResponse {
+  ) async throws -> GoogleCloudGKEMultiCloudV1.ListAttachedClustersResponse {
     throw GoogleCloudGax.RequestError.unimplemented
   }
 
@@ -879,7 +879,7 @@ extension Clients.AttachedClustersProtocol {
     byItem: ListAttachedClustersRequest, options: GoogleCloudGax.RequestOptions
   ) throws -> any AsyncSequence<AttachedCluster, Swift.Error> {
     let listRpc = {
-      (token: Swift.String) async throws -> GoogleCloudGkemulticloudV1.ListAttachedClustersResponse
+      (token: Swift.String) async throws -> GoogleCloudGKEMultiCloudV1.ListAttachedClustersResponse
       in
       throw GoogleCloudGax.RequestError.unimplemented
     }
@@ -933,20 +933,20 @@ extension Clients.AttachedClustersProtocol {
   }
 
   public func getAttachedServerConfig(request: GetAttachedServerConfigRequest) async throws
-    -> GoogleCloudGkemulticloudV1.AttachedServerConfig
+    -> GoogleCloudGKEMultiCloudV1.AttachedServerConfig
   {
     try await self.getAttachedServerConfig(request: request, options: .init())
   }
 
   public func getAttachedServerConfig(
     request: GetAttachedServerConfigRequest, options: GoogleCloudGax.RequestOptions
-  ) async throws -> GoogleCloudGkemulticloudV1.AttachedServerConfig {
+  ) async throws -> GoogleCloudGKEMultiCloudV1.AttachedServerConfig {
     throw GoogleCloudGax.RequestError.unimplemented
   }
 
   public func getAttachedServerConfig(
     name: Swift.String,
-  ) async throws -> GoogleCloudGkemulticloudV1.AttachedServerConfig {
+  ) async throws -> GoogleCloudGKEMultiCloudV1.AttachedServerConfig {
     let request = GetAttachedServerConfigRequest().with {
       $0.name = name
     }
@@ -955,20 +955,20 @@ extension Clients.AttachedClustersProtocol {
 
   public func generateAttachedClusterInstallManifest(
     request: GenerateAttachedClusterInstallManifestRequest
-  ) async throws -> GoogleCloudGkemulticloudV1.GenerateAttachedClusterInstallManifestResponse {
+  ) async throws -> GoogleCloudGKEMultiCloudV1.GenerateAttachedClusterInstallManifestResponse {
     try await self.generateAttachedClusterInstallManifest(request: request, options: .init())
   }
 
   public func generateAttachedClusterInstallManifest(
     request: GenerateAttachedClusterInstallManifestRequest, options: GoogleCloudGax.RequestOptions
-  ) async throws -> GoogleCloudGkemulticloudV1.GenerateAttachedClusterInstallManifestResponse {
+  ) async throws -> GoogleCloudGKEMultiCloudV1.GenerateAttachedClusterInstallManifestResponse {
     throw GoogleCloudGax.RequestError.unimplemented
   }
 
   public func generateAttachedClusterInstallManifest(
     parent: Swift.String,
     attachedClusterId: Swift.String,
-  ) async throws -> GoogleCloudGkemulticloudV1.GenerateAttachedClusterInstallManifestResponse {
+  ) async throws -> GoogleCloudGKEMultiCloudV1.GenerateAttachedClusterInstallManifestResponse {
     let request = GenerateAttachedClusterInstallManifestRequest().with {
       $0.parent = parent
       $0.attachedClusterId = attachedClusterId
@@ -977,14 +977,14 @@ extension Clients.AttachedClustersProtocol {
   }
 
   public func generateAttachedClusterAgentToken(request: GenerateAttachedClusterAgentTokenRequest)
-    async throws -> GoogleCloudGkemulticloudV1.GenerateAttachedClusterAgentTokenResponse
+    async throws -> GoogleCloudGKEMultiCloudV1.GenerateAttachedClusterAgentTokenResponse
   {
     try await self.generateAttachedClusterAgentToken(request: request, options: .init())
   }
 
   public func generateAttachedClusterAgentToken(
     request: GenerateAttachedClusterAgentTokenRequest, options: GoogleCloudGax.RequestOptions
-  ) async throws -> GoogleCloudGkemulticloudV1.GenerateAttachedClusterAgentTokenResponse {
+  ) async throws -> GoogleCloudGKEMultiCloudV1.GenerateAttachedClusterAgentTokenResponse {
     throw GoogleCloudGax.RequestError.unimplemented
   }
 

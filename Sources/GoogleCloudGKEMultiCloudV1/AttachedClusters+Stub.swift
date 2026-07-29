@@ -39,11 +39,11 @@ extension Clients {
 
     func getAttachedCluster(
       request: GetAttachedClusterRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleCloudGkemulticloudV1.AttachedCluster
+    ) async throws -> GoogleCloudGKEMultiCloudV1.AttachedCluster
 
     func listAttachedClusters(
       request: ListAttachedClustersRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleCloudGkemulticloudV1.ListAttachedClustersResponse
+    ) async throws -> GoogleCloudGKEMultiCloudV1.ListAttachedClustersResponse
 
     func deleteAttachedCluster(
       request: DeleteAttachedClusterRequest, options: GoogleCloudGax.RequestOptions
@@ -51,15 +51,15 @@ extension Clients {
 
     func getAttachedServerConfig(
       request: GetAttachedServerConfigRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleCloudGkemulticloudV1.AttachedServerConfig
+    ) async throws -> GoogleCloudGKEMultiCloudV1.AttachedServerConfig
 
     func generateAttachedClusterInstallManifest(
       request: GenerateAttachedClusterInstallManifestRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleCloudGkemulticloudV1.GenerateAttachedClusterInstallManifestResponse
+    ) async throws -> GoogleCloudGKEMultiCloudV1.GenerateAttachedClusterInstallManifestResponse
 
     func generateAttachedClusterAgentToken(
       request: GenerateAttachedClusterAgentTokenRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleCloudGkemulticloudV1.GenerateAttachedClusterAgentTokenResponse
+    ) async throws -> GoogleCloudGKEMultiCloudV1.GenerateAttachedClusterAgentTokenResponse
 
     func listOperations(
       request: GoogleLongrunning.ListOperationsRequest, options: GoogleCloudGax.RequestOptions
@@ -167,7 +167,7 @@ extension Clients {
 
     public func getAttachedCluster(
       request: GetAttachedClusterRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleCloudGkemulticloudV1.AttachedCluster {
+    ) async throws -> GoogleCloudGKEMultiCloudV1.AttachedCluster {
       let path = try { () throws -> Swift.String in
         guard let pathVariable0 = request.name as Swift.String?, !pathVariable0.isEmpty else {
           throw GoogleCloudGax.RequestError.binding("'request.name' is not set or is empty")
@@ -182,12 +182,12 @@ extension Clients {
       req.setValue(Clients.clientHeader, forHTTPHeaderField: "X-Goog-Api-Client")
       let (data, _) = try await self.inner.rpc(for: req).get()
       return try GoogleCloudWkt._ProtoJSONDecoder().decode(
-        GoogleCloudGkemulticloudV1.AttachedCluster.self, from: data)
+        GoogleCloudGKEMultiCloudV1.AttachedCluster.self, from: data)
     }
 
     public func listAttachedClusters(
       request: ListAttachedClustersRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleCloudGkemulticloudV1.ListAttachedClustersResponse {
+    ) async throws -> GoogleCloudGKEMultiCloudV1.ListAttachedClustersResponse {
       let path = try { () throws -> Swift.String in
         guard let pathVariable0 = request.parent as Swift.String?, !pathVariable0.isEmpty else {
           throw GoogleCloudGax.RequestError.binding("'request.parent' is not set or is empty")
@@ -205,7 +205,7 @@ extension Clients {
       req.setValue(Clients.clientHeader, forHTTPHeaderField: "X-Goog-Api-Client")
       let (data, _) = try await self.inner.rpc(for: req).get()
       return try GoogleCloudWkt._ProtoJSONDecoder().decode(
-        GoogleCloudGkemulticloudV1.ListAttachedClustersResponse.self, from: data)
+        GoogleCloudGKEMultiCloudV1.ListAttachedClustersResponse.self, from: data)
     }
 
     public func deleteAttachedCluster(
@@ -235,7 +235,7 @@ extension Clients {
 
     public func getAttachedServerConfig(
       request: GetAttachedServerConfigRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleCloudGkemulticloudV1.AttachedServerConfig {
+    ) async throws -> GoogleCloudGKEMultiCloudV1.AttachedServerConfig {
       let path = try { () throws -> Swift.String in
         guard let pathVariable0 = request.name as Swift.String?, !pathVariable0.isEmpty else {
           throw GoogleCloudGax.RequestError.binding("'request.name' is not set or is empty")
@@ -250,12 +250,12 @@ extension Clients {
       req.setValue(Clients.clientHeader, forHTTPHeaderField: "X-Goog-Api-Client")
       let (data, _) = try await self.inner.rpc(for: req).get()
       return try GoogleCloudWkt._ProtoJSONDecoder().decode(
-        GoogleCloudGkemulticloudV1.AttachedServerConfig.self, from: data)
+        GoogleCloudGKEMultiCloudV1.AttachedServerConfig.self, from: data)
     }
 
     public func generateAttachedClusterInstallManifest(
       request: GenerateAttachedClusterInstallManifestRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleCloudGkemulticloudV1.GenerateAttachedClusterInstallManifestResponse {
+    ) async throws -> GoogleCloudGKEMultiCloudV1.GenerateAttachedClusterInstallManifestResponse {
       let path = try { () throws -> Swift.String in
         guard let pathVariable0 = request.parent as Swift.String?, !pathVariable0.isEmpty else {
           throw GoogleCloudGax.RequestError.binding("'request.parent' is not set or is empty")
@@ -276,12 +276,12 @@ extension Clients {
       req.setValue(Clients.clientHeader, forHTTPHeaderField: "X-Goog-Api-Client")
       let (data, _) = try await self.inner.rpc(for: req).get()
       return try GoogleCloudWkt._ProtoJSONDecoder().decode(
-        GoogleCloudGkemulticloudV1.GenerateAttachedClusterInstallManifestResponse.self, from: data)
+        GoogleCloudGKEMultiCloudV1.GenerateAttachedClusterInstallManifestResponse.self, from: data)
     }
 
     public func generateAttachedClusterAgentToken(
       request: GenerateAttachedClusterAgentTokenRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleCloudGkemulticloudV1.GenerateAttachedClusterAgentTokenResponse {
+    ) async throws -> GoogleCloudGKEMultiCloudV1.GenerateAttachedClusterAgentTokenResponse {
       let path = try { () throws -> Swift.String in
         guard let pathVariable0 = request.attachedCluster as Swift.String?, !pathVariable0.isEmpty
         else {
@@ -300,7 +300,7 @@ extension Clients {
       req.httpBody = try JSONEncoder().encode(request)
       let (data, _) = try await self.inner.rpc(for: req).get()
       return try GoogleCloudWkt._ProtoJSONDecoder().decode(
-        GoogleCloudGkemulticloudV1.GenerateAttachedClusterAgentTokenResponse.self, from: data)
+        GoogleCloudGKEMultiCloudV1.GenerateAttachedClusterAgentTokenResponse.self, from: data)
     }
 
     public func listOperations(
